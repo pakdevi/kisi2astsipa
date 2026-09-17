@@ -3,20 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Study Guide ASTS IPA Kelas VII</title>
+  <title>Peta Belajar ASTS IPA Kelas 7</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,500;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f8fafc;
-      --surface: #ffffff;
-      --text: #0f172a;
-      --muted: #64748b;
-      --border: #0f172a;
-      --line: #e2e8f0;
-      --tag-bg: #f1f5f9;
-      --accent: #2563eb;
+      --color-eager-green: #58cc02;
+      --color-eager-green-shade: #46a302;
+      --color-storybook-green: #d7ffb8;
+      --color-spark-blue: #1cb0f6;
+      --color-spark-blue-shade: #1899d6;
+      --color-fresh-leaf: #a5ed6e;
+      --color-night-ink: #000437;
+      --color-paper-white: #ffffff;
+      --color-charcoal: #4b4b4b;
+      --color-pencil-gray: #777777;
+      --color-faded-gray: #afafaf;
+      --color-border-light: #e5e5e5;
+      --color-card-bg: #ffffff;
+
+      --font-feather: 'Nunito', system-ui, -apple-system, sans-serif;
+      --font-duolingo-sans: 'Nunito', system-ui, -apple-system, sans-serif;
+
+      --radius-xl: 16px;
+      --radius-pill: 9999px;
     }
 
     * {
@@ -26,321 +37,1115 @@
     }
 
     body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-      line-height: 1.5;
-      padding: 2rem 1rem 5rem;
+      background-color: var(--color-paper-white);
+      color: var(--color-charcoal);
+      font-family: var(--font-duolingo-sans);
+      font-size: 17px;
+      line-height: 1.4;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .container {
-      max-width: 960px;
+    /* Top Navigation Bar */
+    header.duo-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--color-paper-white);
+      border-bottom: 2px solid var(--color-border-light);
+      padding: 12px 20px;
+    }
+
+    .nav-container {
+      max-width: 1100px;
       margin: 0 auto;
-    }
-
-    header {
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .badge-bar {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .tag {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.75rem;
+    .logo-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background-color: var(--color-eager-green);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 3px solid var(--color-eager-green-shade);
+    }
+
+    .logo-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--color-paper-white);
+    }
+
+    .logo-text {
+      font-family: var(--font-feather);
+      font-weight: 900;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+      color: var(--color-eager-green);
+    }
+
+    .nav-pills {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .stat-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: var(--radius-xl);
+      border: 2px solid var(--color-border-light);
+      font-size: 14px;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 0.25rem 0.6rem;
-      border: 1px solid var(--border);
-      background: var(--surface);
+      color: var(--color-pencil-gray);
+      background: var(--color-paper-white);
     }
 
-    h1 {
-      font-size: clamp(1.75rem, 4vw, 2.75rem);
+    .stat-pill span.num {
+      color: var(--color-spark-blue);
       font-weight: 800;
-      letter-spacing: -0.03em;
+    }
+
+    /* Hero Section */
+    .hero {
+      max-width: 900px;
+      margin: 40px auto 20px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .hero-meta {
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-pencil-gray);
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-family: var(--font-feather);
+      font-size: clamp(32px, 5vw, 46px);
+      font-weight: 900;
+      letter-spacing: -0.02em;
       line-height: 1.15;
-      margin-bottom: 0.5rem;
+      color: var(--color-eager-green);
+      margin-bottom: 12px;
     }
 
-    .subtitle {
-      color: var(--muted);
-      font-size: 1rem;
+    .hero-subtitle {
+      font-size: 18px;
       font-weight: 500;
+      color: var(--color-pencil-gray);
+      max-width: 580px;
+      margin: 0 auto 30px;
     }
 
-    .controls {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-      margin-bottom: 2rem;
+    /* Progress Overview Card */
+    .progress-card {
+      max-width: 760px;
+      margin: 0 auto 40px;
+      background-color: var(--color-paper-white);
+      border: 2px solid var(--color-border-light);
+      border-radius: var(--radius-xl);
+      padding: 20px 24px;
+      border-bottom: 4px solid var(--color-border-light);
     }
 
-    @media (min-width: 640px) {
-      .controls {
-        grid-template-columns: 1fr auto;
-      }
+    .progress-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      font-weight: 800;
+      font-size: 15px;
     }
 
-    .search-box {
+    .progress-info .title {
+      color: var(--color-charcoal);
+    }
+
+    .progress-info .count {
+      color: var(--color-eager-green);
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 16px;
+      background: var(--color-border-light);
+      border-radius: var(--radius-pill);
+      overflow: hidden;
       position: relative;
     }
 
-    input[type="text"] {
-      width: 100%;
-      font-family: inherit;
-      font-size: 0.95rem;
-      padding: 0.8rem 1rem;
-      border: 2px solid var(--border);
-      background: var(--surface);
-      outline: none;
-      border-radius: 0;
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background-color: var(--color-eager-green);
+      border-radius: var(--radius-pill);
+      transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
-    input[type="text"]:focus {
-      background: #fff;
-      box-shadow: 3px 3px 0px var(--border);
+    /* Interactive Lab Box */
+    .lab-section {
+      max-width: 760px;
+      margin: 0 auto 40px;
+      background: #fafafa;
+      border: 2px solid var(--color-border-light);
+      border-bottom: 4px solid var(--color-faded-gray);
+      border-radius: var(--radius-xl);
+      padding: 24px;
+    }
+
+    .lab-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .lab-header h2 {
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--color-charcoal);
+    }
+
+    .lab-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 600px) {
+      .lab-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .lab-controls label {
+      display: block;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-pencil-gray);
+      margin-bottom: 6px;
+    }
+
+    .lab-controls select, .lab-controls input[type="range"] {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+
+    .lab-controls select {
+      font-family: inherit;
+      font-weight: 700;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 2px solid var(--color-border-light);
+      background: var(--color-paper-white);
+      color: var(--color-charcoal);
+      outline: none;
+    }
+
+    .lab-tank {
+      background: #eaf7fd;
+      border: 2px solid #b7e3f8;
+      border-radius: 14px;
+      height: 180px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lab-object {
+      width: 60px;
+      height: 60px;
+      background: #ffc800;
+      border: 2px solid #e5a400;
+      border-bottom: 4px solid #c28b00;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      color: #794a00;
+      transition: transform 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+      position: absolute;
+    }
+
+    .lab-status {
+      margin-top: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--color-pencil-gray);
+      text-align: center;
+    }
+
+    .lab-status span {
+      color: var(--color-spark-blue);
+      font-weight: 800;
+    }
+
+    /* Filters and Search */
+    .controls-wrapper {
+      max-width: 760px;
+      margin: 0 auto 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .search-input {
+      width: 100%;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 14px 20px;
+      border-radius: var(--radius-xl);
+      border: 2px solid var(--color-border-light);
+      background-color: var(--color-paper-white);
+      color: var(--color-charcoal);
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .search-input:focus {
+      border-color: var(--color-spark-blue);
     }
 
     .filter-tabs {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem;
+      gap: 8px;
     }
 
-    .filter-btn {
+    .duo-tab-btn {
       font-family: inherit;
-      font-size: 0.85rem;
-      font-weight: 600;
-      padding: 0.6rem 0.9rem;
-      border: 2px solid var(--border);
-      background: var(--surface);
+      font-size: 14px;
+      font-weight: 700;
+      padding: 10px 16px;
+      border-radius: var(--radius-xl);
+      border: 2px solid var(--color-border-light);
+      border-bottom: 4px solid var(--color-border-light);
+      background: var(--color-paper-white);
+      color: var(--color-pencil-gray);
       cursor: pointer;
-      border-radius: 0;
-      transition: background 0.1s ease;
+      transition: all 0.1s ease;
+      outline: none;
     }
 
-    .filter-btn.active {
-      background: var(--border);
-      color: #ffffff;
+    .duo-tab-btn:hover {
+      background: #fafafa;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.25rem;
+    .duo-tab-btn:active {
+      transform: translateY(2px);
+      border-bottom-width: 2px;
     }
 
-    @media (min-width: 768px) {
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    .duo-tab-btn.active {
+      border-color: var(--color-spark-blue);
+      border-bottom-color: var(--color-spark-blue-shade);
+      background: #eaf7fd;
+      color: var(--color-spark-blue);
     }
 
-    .card {
-      background: var(--surface);
-      border: 2px solid var(--border);
-      padding: 1.25rem;
+    /* Target Indicators List */
+    .study-list {
+      max-width: 760px;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-      box-shadow: 4px 4px 0px var(--border);
+      gap: 16px;
     }
 
-    .card-topic {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      font-weight: 700;
-      color: var(--muted);
-      margin-bottom: 0.5rem;
+    .target-card {
+      background: var(--color-paper-white);
+      border: 2px solid var(--color-border-light);
+      border-bottom: 4px solid var(--color-border-light);
+      border-radius: var(--radius-xl);
+      padding: 20px;
+      transition: border-color 0.2s ease;
+    }
+
+    .target-card.completed {
+      border-color: var(--color-fresh-leaf);
+      border-bottom-color: var(--color-eager-green);
+      background-color: #fbfdf9;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    /* Duolingo Checkmark Button */
+    .check-btn {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      border: 2px solid var(--color-faded-gray);
+      border-bottom: 3px solid var(--color-faded-gray);
+      background: var(--color-paper-white);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+      transition: all 0.15s ease;
+    }
+
+    .check-btn:active {
+      transform: translateY(2px);
+      border-bottom-width: 1px;
+    }
+
+    .check-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: var(--color-paper-white);
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      display: none;
+    }
+
+    .target-card.completed .check-btn {
+      background: var(--color-eager-green);
+      border-color: var(--color-eager-green);
+      border-bottom-color: var(--color-eager-green-shade);
+    }
+
+    .target-card.completed .check-btn svg {
       display: block;
     }
 
-    .card-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      line-height: 1.4;
-      margin-bottom: 1rem;
+    .card-body {
+      flex-grow: 1;
     }
 
-    .card-meta {
-      border-top: 1px solid var(--line);
-      padding-top: 0.75rem;
+    .card-tags {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.8rem;
-      color: var(--muted);
-      font-weight: 500;
-    }
-
-    .empty-state {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 4rem 1rem;
-      border: 2px dashed var(--border);
-      background: var(--surface);
-    }
-
-    .empty-state p {
-      font-weight: 600;
-      color: var(--muted);
-    }
-
-    footer {
-      margin-top: 3.5rem;
-      border-top: 1px solid var(--line);
-      padding-top: 1.5rem;
-      font-size: 0.85rem;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
       flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .card-pill {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      background: #f1f5f9;
+      color: var(--color-pencil-gray);
+    }
+
+    .target-card.completed .card-pill {
+      background: var(--color-storybook-green);
+      color: #3b7c05;
+    }
+
+    .card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--color-charcoal);
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+
+    .card-details {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--color-border-light);
+      display: none;
+    }
+
+    .card-details.open {
+      display: block;
+    }
+
+    .concept-box {
+      background: #f8fafc;
+      border-left: 3px solid var(--color-spark-blue);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+      color: var(--color-charcoal);
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+
+    .concept-box strong {
+      display: block;
+      color: var(--color-night-ink);
+      margin-bottom: 2px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .duo-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-spark-blue);
+      background: transparent;
+      border: 2px solid var(--color-border-light);
+      border-bottom: 3px solid var(--color-faded-gray);
+      padding: 6px 14px;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.1s ease;
+    }
+
+    .duo-link-btn:active {
+      transform: translateY(2px);
+      border-bottom-width: 1px;
+    }
+
+    .duo-link-btn:hover {
+      background: #f8fafc;
+    }
+
+    .toggle-hint-btn {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--color-pencil-gray);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px 0;
+      text-decoration: underline;
+    }
+
+    /* Empty state */
+    .empty-block {
+      text-align: center;
+      padding: 60px 20px;
+      background: #f8fafc;
+      border: 2px dashed var(--color-border-light);
+      border-radius: var(--radius-xl);
+      color: var(--color-pencil-gray);
+      font-weight: 700;
+      display: none;
+    }
+
+    /* Footer Band */
+    footer.duo-footer {
+      margin-top: 80px;
+      background: var(--color-eager-green);
+      color: var(--color-paper-white);
+      padding: 48px 20px;
+      border-top: 4px solid var(--color-eager-green-shade);
+    }
+
+    .footer-content {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+    }
+
+    .footer-title {
+      font-family: var(--font-feather);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--color-paper-white);
+    }
+
+    .footer-text {
+      font-size: 15px;
+      color: var(--color-storybook-green);
+      max-width: 600px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="badge-bar">
-        <span class="tag">SMP PGII 1 Bandung</span>
-        <span class="tag">Kurikulum Merdeka</span>
-        <span class="tag">IPA Kelas 7</span>
-        <span class="tag">ASTS Ganjil</span>
-      </div>
-      <h1>Peta Indikator ASTS IPA</h1>
-      <p class="subtitle">Panduan kompetensi dan indikator esensial persiapan asesmen tengah semester.</p>
-    </header>
 
-    <div class="controls">
-      <div class="search-box">
-        <input type="text" id="searchInput" placeholder="Cari materi atau indikator capaian..." autocomplete="off">
-      </div>
-      <div class="filter-tabs" id="filterContainer">
-        <button class="filter-btn active" data-filter="all">Semua</button>
-        <button class="filter-btn" data-filter="Metode Ilmiah">Metode Ilmiah</button>
-        <button class="filter-btn" data-filter="Pengukuran">Pengukuran</button>
-        <button class="filter-btn" data-filter="Materi & Perubahan">Materi & Perubahan</button>
-        <button class="filter-btn" data-filter="Massa Jenis">Massa Jenis</button>
+  <!-- Top Sticky Navigation -->
+  <header class="duo-nav">
+    <div class="nav-container">
+      <a href="#" class="logo-badge">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <span class="logo-text">IPA Quest</span>
+      </a>
+      <div class="nav-pills">
+        <div class="stat-pill">
+          <span>Target Selesai:</span>
+          <span class="num" id="statCompleted">0/35</span>
+        </div>
       </div>
     </div>
+  </header>
 
-    <main class="grid" id="indicatorsGrid"></main>
+  <!-- Hero Header -->
+  <section class="hero">
+    <div class="hero-meta">SMP PGII 1 BANDUNG · ASTS KELAS 7</div>
+    <h1 class="hero-title">Siap Tuntaskan Sains!</h1>
+    <p class="hero-subtitle">Kuasai 35 indikator esensial lewat simulasi konsep, ringkasan inti materi, dan video panduan.</p>
 
-    <div class="empty-state" id="emptyState" style="display: none;">
-      <p>Tidak ada indikator yang sesuai dengan kata kunci pencarian.</p>
+    <!-- Progress Card -->
+    <div class="progress-card">
+      <div class="progress-info">
+        <span class="title">Tingkat Penguasaan Materi</span>
+        <span class="count" id="progressPercentage">0%</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressBar"></div>
+      </div>
     </div>
+  </section>
 
-    <footer>
-      <span>Asesmen Sumatif Tengah Semester (ASTS)</span>
-      <span>Fokus pada pemahaman konsep dan literasi sains</span>
-    </footer>
+  <!-- Interactive Lab Simulation: Massa Jenis Fluida -->
+  <section class="lab-section">
+    <div class="lab-header">
+      <h2>Mini Lab: Simulasi Terapung & Tenggelam</h2>
+    </div>
+    <div class="lab-grid">
+      <div class="lab-controls">
+        <label for="liquidSelect">Pilih Jenis Cairan</label>
+        <select id="liquidSelect">
+          <option value="1.0">Air Bersih (1,0 g/cm³)</option>
+          <option value="0.8">Minyak Goreng (0,8 g/cm³)</option>
+          <option value="1.24">Air Laut Mati (1,24 g/cm³)</option>
+        </select>
+
+        <label for="massRange">Massa Benda (<span id="massVal">80</span> gram)</label>
+        <input type="range" id="massRange" min="20" max="200" step="10" value="80">
+
+        <label for="volumeRange">Volume Benda (<span id="volVal">100</span> cm³)</label>
+        <input type="range" id="volumeRange" min="50" max="150" step="10" value="100">
+      </div>
+
+      <div>
+        <div class="lab-tank">
+          <div class="lab-object" id="simObject">
+            <span id="objDensity">0.8</span>
+            <span>g/cm³</span>
+          </div>
+        </div>
+        <div class="lab-status" id="simResult">Posisi: <span>Terapung</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search & Filter Area -->
+  <section class="controls-wrapper">
+    <input type="text" id="searchInput" class="search-input" placeholder="Cari indikator, besaran, rumus, atau konsep..." autocomplete="off">
+    
+    <div class="filter-tabs" id="filterButtons">
+      <button class="duo-tab-btn active" data-filter="all">Semua Materi (35)</button>
+      <button class="duo-tab-btn" data-filter="Metode Ilmiah">Metode Ilmiah</button>
+      <button class="duo-tab-btn" data-filter="Pengukuran">Pengukuran</button>
+      <button class="duo-tab-btn" data-filter="Perubahan Zat">Zat & Perubahan</button>
+      <button class="duo-tab-btn" data-filter="Massa Jenis">Massa Jenis</button>
+    </div>
+  </section>
+
+  <!-- Indicators List -->
+  <main class="study-list" id="indicatorContainer"></main>
+
+  <div class="empty-block" id="emptyNotice">
+    Tidak ada indikator capaian yang cocok dengan kata kunci pencarian.
   </div>
 
+  <!-- Footer Full-Bleed Band -->
+  <footer class="duo-footer">
+    <div class="footer-content">
+      <div class="footer-title">Belajar Sains Jadi Jelas dan Terarah.</div>
+      <p class="footer-text">Gunakan panduan ini untuk menguji pemahaman konsep sebelum asesmen ASTS. Tetap jujur, teliti, dan utamakan pemahaman esensial.</p>
+    </div>
+  </footer>
+
   <script>
-    const data = [
-      { cluster: "Pengukuran", topic: "Besaran & Satuan", desc: "Mengidentifikasi besaran dan satuannya sesuai Standar Internasional (SI)." },
-      { cluster: "Pengukuran", topic: "Besaran & Satuan", desc: "Mengubah konversi satuan massa ke dalam satuan Standar Internasional (SI)." },
-      { cluster: "Materi & Perubahan", topic: "Perubahan Zat", desc: "Mengidentifikasi jenis perubahan zat berdasarkan analisis gambar ilustrasi." },
-      { cluster: "Pengukuran", topic: "Pengukuran", desc: "Membedakan karakteristik serta fungsi alat ukur baku dan alat ukur tidak baku." },
-      { cluster: "Pengukuran", topic: "Pengukuran", desc: "Membaca dan menafsirkan skala hasil pengukuran massa secara presisi." },
-      { cluster: "Pengukuran", topic: "Pengukuran", desc: "Menghitung dan menentukan nilai massa benda dari sajian neraca timbangan." },
-      { cluster: "Pengukuran", topic: "Besaran Pokok", desc: "Mengklasifikasikan jenis-jenis besaran pokok dalam fisika beserta satuannya." },
-      { cluster: "Materi & Perubahan", topic: "Klasifikasi Materi", desc: "Menjelaskan konsep dasar dan pengertian materi dalam kajian sains." },
-      { cluster: "Metode Ilmiah", topic: "Metode Ilmiah", desc: "Mengurutkan sistematika dan alur langkah kerja metode ilmiah yang valid." },
-      { cluster: "Pengukuran", topic: "Pengukuran", desc: "Membedakan penggunaan dan sifat satuan baku dengan satuan tidak baku." },
-      { cluster: "Materi & Perubahan", topic: "Perubahan Zat", desc: "Menganalisis jenis transformasi materi pada peristiwa menggoreng." },
-      { cluster: "Materi & Perubahan", topic: "Perubahan Kimia", desc: "Menentukan ciri-ciri terjadinya reaksi atau perubahan kimia dari fenomena konkret." },
-      { cluster: "Massa Jenis", topic: "Massa Jenis", desc: "Menganalisis dan menentukan posisi relatif benda dalam fluida berbasis massa jenis." },
-      { cluster: "Pengukuran", topic: "Pengukuran Ruang", desc: "Menghitung parameter luas serta volume benda berdasarkan hasil pengukuran." },
-      { cluster: "Metode Ilmiah", topic: "Metode Ilmiah", desc: "Membedakan validitas prosedur antara investigasi ilmiah dan non-ilmiah." },
-      { cluster: "Metode Ilmiah", topic: "Metode Ilmiah", desc: "Menjodohkan tahapan investigasi metode ilmiah dengan aksi konkret pelaksanaannya." },
-      { cluster: "Metode Ilmiah", topic: "Keselamatan Kerja", desc: "Menjelaskan esensi dan prosedur keselamatan kerja di dalam laboratorium sains." },
-      { cluster: "Metode Ilmiah", topic: "Cabang IPA", desc: "Menjodohkan bidang cabang sains (IPA) dengan ruang lingkup objek kajiannya." },
-      { cluster: "Metode Ilmiah", topic: "Variabel Penelitian", desc: "Mengidentifikasi dan menentukan variabel kontrol serta variabel bebas-terikat." },
-      { cluster: "Metode Ilmiah", topic: "Metode Ilmiah", desc: "Menjelaskan implementasi tahapan investigasi ilmiah pada penyelesaian masalah riil." },
-      { cluster: "Materi & Perubahan", topic: "Perubahan Wujud", desc: "Menjodohkan jenis proses perubahan wujud zat dengan peristiwa aplikatifnya." },
-      { cluster: "Materi & Perubahan", topic: "Perubahan Fisika & Kimia", desc: "Membedakan prinsip dasar, sifat reaksi, dan indikator perubahan fisika vs kimia." },
-      { cluster: "Massa Jenis", topic: "Massa Jenis", desc: "Menerapkan prinsip kerapatan zat pada mekanisme benda mengapung dan tenggelam." },
-      { cluster: "Massa Jenis", topic: "Massa Jenis", desc: "Menganalisis alasan fisis di balik fenomena terapungnya objek/manusia di Laut Mati." },
-      { cluster: "Massa Jenis", topic: "Massa Jenis", desc: "Menganalisis korelasi matematis-fisis massa jenis terhadap perilaku material di fluida." },
-      { cluster: "Materi & Perubahan", topic: "Perubahan Wujud", desc: "Menjelaskan mekanisme perubahan wujud padat ke gas pada peristiwa menyublim." },
-      { cluster: "Materi & Perubahan", topic: "Perubahan Zat", desc: "Menyimpulkan jenis perubahan materi dari data tabel hasil observasi eksperimen." },
-      { cluster: "Materi & Perubahan", topic: "Campuran", desc: "Mengklasifikasikan sifat, fase, dan komponen campuran homogen serta heterogen." },
-      { cluster: "Pengukuran", topic: "Besaran Turunan", desc: "Menentukan penurunan rumus dan satuan besaran turunan volume dari besaran pokok." },
-      { cluster: "Pengukuran", topic: "Besaran Fisika", desc: "Menganalisis kategori besaran fisika yang terlibat dalam aktivitas fisis spesifik." },
-      { cluster: "Pengukuran", topic: "Instrumen Ukur", desc: "Menentukan ketepatan pemilihan instrumen alat ukur sesuai ketelitian objek ukur." },
-      { cluster: "Pengukuran", topic: "Instrumen Ukur", desc: "Memilih jenis alat ukur yang proporsional berdasarkan bentuk dan dimensi target." },
-      { cluster: "Pengukuran", topic: "Ketelitian & Kesalahan", desc: "Menentukan hasil ukur paling presisi serta mengidentifikasi potensi galat pengukuran." },
-      { cluster: "Pengukuran", topic: "Konversi Satuan", desc: "Melakukan perhitungan konversi antarsatuan panjang secara sistematis." },
-      { cluster: "Materi & Perubahan", topic: "Ciri Fisik Zat", desc: "Menganalisis karakteristik partikel serta wujud dan ciri fisik zat padat, cair, dan gas." }
+    // Data indikator dan konsep murni dari kisi-kisi (tanpa nomor soal dan tanpa kunci jawaban)
+    const indicatorsData = [
+      {
+        id: "ind_1",
+        category: "Pengukuran",
+        topic: "Besaran & Satuan",
+        title: "Mengidentifikasi besaran dan satuannya sesuai Standar Internasional (SI)",
+        concept: "7 Besaran Pokok SI: Panjang (meter), Massa (kilogram), Waktu (sekon), Suhu (Kelvin), Kuat Arus (Ampere), Jumlah Zat (mol), Intensitas Cahaya (kandela).",
+        ytQuery: "besaran pokok dan satuan internasional smp kelas 7"
+      },
+      {
+        id: "ind_2",
+        category: "Pengukuran",
+        topic: "Besaran & Satuan",
+        title: "Mengubah konversi satuan massa ke dalam satuan SI",
+        concept: "Satuan massa standar SI adalah Kilogram (kg). Contoh konversi penting: 1 ton = 1.000 kg, 1 kuintal = 100 kg, 1 gram = 0,001 kg (dibagi 1.000).",
+        ytQuery: "konversi satuan massa smp kelas 7"
+      },
+      {
+        id: "ind_3",
+        category: "Perubahan Zat",
+        topic: "Perubahan Zat",
+        title: "Mengidentifikasi jenis perubahan zat berdasarkan pengamatan visual",
+        concept: "Amati apakah terbentuk zat jenis baru. Perubahan wujud dan bentuk adalah fisika; munculnya endapan, gas, api, atau bau khas menandakan kimia.",
+        ytQuery: "perubahan fisika dan kimia kelas 7 kurikulum merdeka"
+      },
+      {
+        id: "ind_4",
+        category: "Pengukuran",
+        topic: "Pengukuran",
+        title: "Membedakan karakteristik alat ukur baku dan tidak baku",
+        concept: "Alat baku (mistar, neraca, stopwatch) menghasilkan nilai seragam dan diakui universal. Alat tidak baku (jengkal, depa, langkah) nilainya variatif antar-individu.",
+        ytQuery: "pengukuran baku dan tidak baku ipa kelas 7"
+      },
+      {
+        id: "ind_5",
+        category: "Pengukuran",
+        topic: "Pengukuran",
+        title: "Membaca dan menafsirkan skala hasil pengukuran massa",
+        concept: "Saat membaca skala neraca, jumlahkan seluruh posisi anting beban di setiap lengan neraca (lengan ratusan, puluhan, dan satuan).",
+        ytQuery: "cara membaca neraca ohaus 3 lengan"
+      },
+      {
+        id: "ind_6",
+        category: "Pengukuran",
+        topic: "Pengukuran",
+        title: "Menentukan massa total benda dari pembacaan anak timbangan neraca",
+        concept: "Keseimbangan neraca tercapai jika: Massa Benda = Jumlah Nilai Seluruh Anak Timbangan pengimbang di lengan seberangnya.",
+        ytQuery: "menghitung massa neraca sama lengan ipa"
+      },
+      {
+        id: "ind_7",
+        category: "Pengukuran",
+        topic: "Besaran",
+        title: "Mengklasifikasikan besaran pokok dalam fisika",
+        concept: "Besaran pokok adalah besaran dasar yang tidak diturunkan dari besaran lain. Ingat jembatan keledai: JIWA SMP (Jumlah zat, Intensitas, Waktu, Arus, Suhu, Massa, Panjang).",
+        ytQuery: "tujuh besaran pokok ipa smp kelas 7"
+      },
+      {
+        id: "ind_8",
+        category: "Perubahan Zat",
+        topic: "Materi",
+        title: "Menjelaskan konsep dasar dan pengertian materi",
+        concept: "Materi adalah segala sesuatu yang mempunyai massa dan menempati ruang (memiliki volume). Semua benda di alam semesta tersusun dari materi.",
+        ytQuery: "pengertian materi dan klasifikasinya ipa smp"
+      },
+      {
+        id: "ind_9",
+        category: "Metode Ilmiah",
+        topic: "Metode Ilmiah",
+        title: "Mengurutkan alur sistematika langkah metode ilmiah",
+        concept: "Tahapan baku investigasi sains: (1) Observasi fenomena -> (2) Merumuskan masalah -> (3) Mengajukan hipotesis -> (4) Eksperimen -> (5) Analisis data -> (6) Menarik kesimpulan.",
+        ytQuery: "langkah langkah metode ilmiah kelas 7"
+      },
+      {
+        id: "ind_10",
+        category: "Pengukuran",
+        topic: "Pengukuran",
+        title: "Membedakan sifat dan reliabilitas satuan baku vs tidak baku",
+        concept: "Satuan baku memiliki nilai pasti dan berlaku di seluruh dunia (meter, gram). Satuan tidak baku (hasta, jengkal) tidak reliabel untuk eksperimen ilmiah.",
+        ytQuery: "satuan baku dan tidak baku smp kelas 7"
+      },
+      {
+        id: "ind_11",
+        category: "Perubahan Zat",
+        topic: "Perubahan Zat",
+        title: "Menganalisis transformasi materi pada peristiwa menggoreng",
+        concept: "Menggoreng (misal telur atau tempe) melibatkan pematangan protein dan perubahan molekul yang tidak dapat kembali ke bentuk semula (Perubahan Kimia).",
+        ytQuery: "contoh perubahan kimia dalam kehidupan sehari-hari"
+      },
+      {
+        id: "ind_12",
+        category: "Perubahan Zat",
+        topic: "Perubahan Zat",
+        title: "Menentukan indikator perubahan kimia dari suatu peristiwa",
+        concept: "4 Tanda terjadinya perubahan kimia: (1) Terjadi perubahan warna, (2) Terbentuk endapan, (3) Terbentuk gas/gelembung, (4) Terjadi perubahan suhu/pelepasan kalor.",
+        ytQuery: "tanda tanda perubahan kimia ipa kelas 7"
+      },
+      {
+        id: "ind_13",
+        category: "Massa Jenis",
+        topic: "Massa Jenis",
+        title: "Menentukan posisi relatif benda dalam fluida berbasis massa jenis",
+        concept: "Jika ρ_benda < ρ_fluida -> Terapung. Jika ρ_benda = ρ_fluida -> Melayang. Jika ρ_benda > ρ_fluida -> Tenggelam.",
+        ytQuery: "posisi benda dalam air terapung melayang tenggelam"
+      },
+      {
+        id: "ind_14",
+        category: "Pengukuran",
+        topic: "Pengukuran",
+        title: "Menentukan luas dan volume berdasarkan hasil pengukuran",
+        concept: "Luas benda tak beraturan dapat diestimasi dengan kertas berpetak. Volume batu/benda tak beraturan diukur menggunakan gelas ukur: V = V_akhir - V_awal.",
+        ytQuery: "mengukur volume benda tak beraturan dengan gelas ukur"
+      },
+      {
+        id: "ind_15",
+        category: "Metode Ilmiah",
+        topic: "Metode Ilmiah",
+        title: "Membedakan validitas investigasi ilmiah dan non-ilmiah",
+        concept: "Penyelidikan ilmiah bersandar pada data terukur, bukti empiris, dan dapat diuji ulang (replikasi). Non-ilmiah bersandar pada opini subjektif, prasangka, atau mitos.",
+        ytQuery: "hakikat sains dan metode ilmiah smp"
+      },
+      {
+        id: "ind_16",
+        category: "Metode Ilmiah",
+        topic: "Metode Ilmiah",
+        title: "Menjodohkan tahapan metode ilmiah dengan aktivitas riset riil",
+        concept: "Mencatat perubahan tinggi tanaman harian = Pengumpulan data; Mengira-ngira hubungan cahaya dan klorofil sebelum uji = Membuat hipotesis.",
+        ytQuery: "contoh penerapan tahapan metode ilmiah ipa"
+      },
+      {
+        id: "ind_17",
+        category: "Metode Ilmiah",
+        topic: "Keselamatan Kerja",
+        title: "Menjelaskan prosedur keselamatan kerja di laboratorium IPA",
+        concept: "Gunakan jas lab & kacamata pelindung, jangan menghirup uap bahan kimia langsung (kibaskan dengan tangan), dan kenali letak APAR serta simbol bahaya bahan kimia.",
+        ytQuery: "keselamatan kerja di laboratorium ipa smp kelas 7"
+      },
+      {
+        id: "ind_18",
+        category: "Metode Ilmiah",
+        topic: "Cabang IPA",
+        title: "Menjodohkan cabang sains dengan fokus objek kajiannya",
+        concept: "Biologi (makhluk hidup), Fisika (energi, materi, dan gerak), Kimia (struktur dan reaksi zat), Astronomi (benda langit), Geologi (struktur bumi & batuan).",
+        ytQuery: "cabang cabang ilmu ipa kelas 7 kurikulum merdeka"
+      },
+      {
+        id: "ind_19",
+        category: "Metode Ilmiah",
+        topic: "Variabel Penelitian",
+        title: "Mengidentifikasi variabel bebas, terikat, dan kontrol",
+        concept: "Variabel Bebas: yang sengaja diubah oleh peneliti. Variabel Terikat: hasil yang diukur/diamati. Variabel Kontrol: faktor lain yang dibuat konstan/sama.",
+        ytQuery: "variabel bebas terikat kontrol ipa kelas 7"
+      },
+      {
+        id: "ind_20",
+        category: "Metode Ilmiah",
+        topic: "Metode Ilmiah",
+        title: "Menjelaskan implementasi tahapan investigasi ilmiah untuk problem riil",
+        concept: "Penerapan metode ilmiah untuk memecahkan masalah keseharian secara logis dan runtut berdasarkan fakta lapangan.",
+        ytQuery: "metode ilmiah kurikulum merdeka kelas 7"
+      },
+      {
+        id: "ind_21",
+        category: "Perubahan Zat",
+        topic: "Perubahan Wujud",
+        title: "Menjodohkan jenis proses perubahan wujud zat dengan contoh fenomena",
+        concept: "Membeku (cair -> padat), Mencair (padat -> cair), Menguap (cair -> gas), Mengembun (gas -> cair), Menyublim (padat -> gas), Mengkristal/Mendeposisi (gas -> padat).",
+        ytQuery: "perubahan wujud zat ipa smp kelas 7"
+      },
+      {
+        id: "ind_22",
+        category: "Perubahan Zat",
+        topic: "Perubahan Zat",
+        title: "Membedakan sifat reaksi fisika vs kimia",
+        concept: "Perubahan fisika: susunan molekul tetap, hanya bentuk/wujud yang berubah (bisa balik). Perubahan kimia: susunan molekul berubah menghasilkan zat baru (ireversibel).",
+        ytQuery: "perbedaan perubahan fisika dan kimia kelas 7"
+      },
+      {
+        id: "ind_23",
+        category: "Massa Jenis",
+        topic: "Massa Jenis",
+        title: "Menerapkan prinsip kerapatan zat pada mekanisme benda mengapung",
+        concept: "Rumus Massa Jenis: ρ = m / V. Benda berongga dapat mengapung karena volume totalnya besar, sehingga massa jenis rata-ratanya menjadi lebih kecil dari cairan.",
+        ytQuery: "rumus massa jenis ipa smp kelas 7"
+      },
+      {
+        id: "ind_24",
+        category: "Massa Jenis",
+        topic: "Massa Jenis",
+        title: "Menganalisis fenomena manusia mudah terapung di Laut Mati",
+        concept: "Kadar garam terlarut di Laut Mati sangat tinggi (~30%), membuat massa jenis air laut mati jauh lebih besar (ρ ≈ 1,24 g/cm³) daripada massa jenis rata-rata tubuh manusia (ρ ≈ 0,98 g/cm³).",
+        ytQuery: "mengapa kita bisa mengapung di laut mati sains"
+      },
+      {
+        id: "ind_25",
+        category: "Massa Jenis",
+        topic: "Massa Jenis",
+        title: "Menganalisis korelasi matematis massa jenis dan perilaku benda",
+        concept: "Massa jenis merupakan kerapatan partikel zat per satuan volume. Nilai massa jenis suatu zat murni bersifat tetap dan menjadi identitas khas zat tersebut.",
+        ytQuery: "konsep massa jenis terapung melayang tenggelam"
+      },
+      {
+        id: "ind_26",
+        category: "Perubahan Zat",
+        topic: "Perubahan Wujud",
+        title: "Menjelaskan mekanisme perubahan wujud menyublim",
+        concept: "Menyublim adalah perubahan langsung dari fase padat ke fase gas tanpa melalui fase cair terlebih dahulu saat menyerap kalor (contoh: kapur barus / dry ice).",
+        ytQuery: "proses menyublim kapur barus ipa"
+      },
+      {
+        id: "ind_27",
+        category: "Perubahan Zat",
+        topic: "Perubahan Zat",
+        title: "Menyimpulkan jenis perubahan materi dari data tabel eksperimen",
+        concept: "Periksa kolom hasil observasi: jika terjadi kenaikan temperatur secara mandiri atau muncul endapan padat baru, simpulkan sebagai reaksi kimia.",
+        ytQuery: "analisis data eksperimen perubahan materi kelas 7"
+      },
+      {
+        id: "ind_28",
+        category: "Perubahan Zat",
+        topic: "Campuran",
+        title: "Mengidentifikasi campuran homogen dan heterogen",
+        concept: "Campuran Homogen (larutan): partikel tercampur rata, tidak ada batas bidang (air sirup). Campuran Heterogen: masih ada bidang batas nyata antar zat (air kopi tubruk, air pasir).",
+        ytQuery: "campuran homogen dan heterogen ipa kelas 7"
+      },
+      {
+        id: "ind_29",
+        category: "Pengukuran",
+        topic: "Besaran Turunan",
+        title: "Menentukan besaran turunan volume dari besaran pokok pembentuknya",
+        concept: "Volume adalah turunan dari besaran pokok panjang. Volume balok = panjang × lebar × tinggi -> m × m × m = m³.",
+        ytQuery: "besaran turunan volume dan luas ipa"
+      },
+      {
+        id: "ind_30",
+        category: "Pengukuran",
+        topic: "Besaran",
+        title: "Menganalisis jenis besaran fisika dari aktivitas pengukuran konkret",
+        concept: "Mengukur durasi lari = Besaran Waktu (sekon); Menimbang berat belanjaan = Besaran Massa (kg); Mengukur panjang meja = Besaran Panjang (meter).",
+        ytQuery: "aktivitas pengukuran besaran ipa smp"
+      },
+      {
+        id: "ind_31",
+        category: "Pengukuran",
+        topic: "Alat Ukur",
+        title: "Menentukan alat ukur panjang paling tepat berdasarkan ketelitiannya",
+        concept: "Ketelitian instrumen: Penggaris (1 mm / 0,1 cm), Jangka Sorong (0,1 mm / 0,01 cm), Mikrometer Sekrup (0,01 mm / 0,001 cm).",
+        ytQuery: "perbedaan mistar jangka sorong mikrometer sekrup"
+      },
+      {
+        id: "ind_32",
+        category: "Pengukuran",
+        topic: "Alat Ukur",
+        title: "Menentukan alat ukur yang proporsional sesuai dimensi objek",
+        concept: "Mengukur tebal selembar kertas/rambut -> Mikrometer Sekrup. Mengukur diameter dalam pipa/koin -> Jangka Sorong. Mengukur meja belajar -> Meteran rol/mistar.",
+        ytQuery: "penggunaan alat ukur panjang mikrometer dan jangka sorong"
+      },
+      {
+        id: "ind_33",
+        category: "Pengukuran",
+        topic: "Ketelitian & Kesalahan",
+        title: "Menentukan hasil ukur paling presisi dan mengidentifikasi kesalahan paralaks",
+        concept: "Kesalahan Paralaks terjadi jika arah pandangan mata tidak tegak lurus terhadap garis skala saat pembacaan hasil ukur.",
+        ytQuery: "kesalahan paralaks dalam pengukuran fisika"
+      },
+      {
+        id: "ind_34",
+        category: "Pengukuran",
+        topic: "Konversi Satuan",
+        title: "Melakukan perhitungan konversi antarsatuan panjang",
+        concept: "Tangga satuan panjang: km - hm - dam - m - dm - cm - mm. Tiap turun satu tingkat kalikan 10, tiap naik satu tingkat bagi dengan 10.",
+        ytQuery: "konversi satuan panjang ipa smp kelas 7"
+      },
+      {
+        id: "ind_35",
+        category: "Perubahan Zat",
+        topic: "Ciri Fisik Zat",
+        title: "Menganalisis ciri dan susunan partikel zat padat, cair, dan gas",
+        concept: "Padat: bentuk & volume tetap, susunan partikel sangat rapat & teratur. Cair: volume tetap bentuk berubah mengikuti wadah. Gas: bentuk & volume berubah menempati seluruh ruang.",
+        ytQuery: "susunan partikel zat padat cair gas ipa"
+      }
     ];
 
-    const grid = document.getElementById('indicatorsGrid');
-    const searchInput = document.getElementById('searchInput');
-    const emptyState = document.getElementById('emptyState');
-    const filterBtns = document.querySelectorAll('.filter-btn');
+    // State Management via LocalStorage
+    const STORAGE_KEY = 'asts_ipa_mastery_data_v1';
+    let completedSet = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'));
+    let activeFilter = 'all';
+    let searchQuery = '';
 
-    let currentFilter = 'all';
-    let currentSearch = '';
-
-    function renderCards() {
-      const filtered = data.filter(item => {
-        const matchesFilter = currentFilter === 'all' || item.cluster === currentFilter;
-        const textToSearch = (item.topic + ' ' + item.desc + ' ' + item.cluster).toLowerCase();
-        const matchesSearch = textToSearch.includes(currentSearch.toLowerCase());
-        return matchesFilter && matchesSearch;
-      });
-
-      grid.innerHTML = '';
-
-      if (filtered.length === 0) {
-        emptyState.style.display = 'block';
-      } else {
-        emptyState.style.display = 'none';
-        filtered.forEach(item => {
-          const card = document.createElement('article');
-          card.className = 'card';
-          card.innerHTML = `
-            <div>
-              <span class="card-topic">${item.topic}</span>
-              <h2 class="card-title">${item.desc}</h2>
-            </div>
-            <div class="card-meta">
-              <span>Kluster: ${item.cluster}</span>
-              <span>Target Capaian</span>
-            </div>
-          `;
-          grid.appendChild(card);
-        });
-      }
+    function saveState() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify([...completedSet]));
+      updateProgress();
     }
 
-    searchInput.addEventListener('input', (e) => {
-      currentSearch = e.target.value.trim();
-      renderCards();
+    function updateProgress() {
+      const total = indicatorsData.length;
+      const count = completedSet.size;
+      const percent = Math.round((count / total) * 100);
+
+      document.getElementById('statCompleted').textContent = `${count}/${total}`;
+      document.getElementById('progressPercentage').textContent = `${percent}%`;
+      document.getElementById('progressBar').style.width = `${percent}%`;
+    }
+
+    // Render Cards List
+    function renderList() {
+      const container = document.getElementById('indicatorContainer');
+      const emptyNotice = document.getElementById('emptyNotice');
+
+      const filtered = indicatorsData.filter(item => {
+        const matchesCat = (activeFilter === 'all') || (item.category === activeFilter);
+        const searchStr = (item.title + ' ' + item.topic + ' ' + item.concept + ' ' + item.category).toLowerCase();
+        const matchesSearch = searchStr.includes(searchQuery.toLowerCase());
+        return matchesCat && matchesSearch;
+      });
+
+      container.innerHTML = '';
+
+      if (filtered.length === 0) {
+        emptyNotice.style.display = 'block';
+        return;
+      }
+
+      emptyNotice.style.display = 'none';
+
+      filtered.forEach(item => {
+        const isDone = completedSet.has(item.id);
+        const card = document.createElement('div');
+        card.className = `target-card ${isDone ? 'completed' : ''}`;
+        card.id = `card_${item.id}`;
+
+        const ytUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(item.ytQuery)}`;
+
+        card.innerHTML = `
+          <div class="card-top">
+            <button class="check-btn" onclick="toggleComplete('${item.id}')" aria-label="Tandai paham">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </button>
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="card-pill">${item.category}</span>
+                <span class="card-pill">${item.topic}</span>
+              </div>
+              <div class="card-title">${item.title}</div>
+              
+              <div class="card-actions">
+                <button class="toggle-hint-btn" onclick="toggleDetails('${item.id}')">Poin Esensial</button>
+                <a href="${ytUrl}" target="_blank" rel="noopener noreferrer" class="duo-link-btn">
+                  <span>Video Topik</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+              </div>
+
+              <div class="card-details" id="detail_${item.id}">
+                <div class="concept-box">
+                  <strong>Ringkasan Konsep Kunci</strong>
+                  ${item.concept}
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    window.toggleComplete = function(id) {
+      if (completedSet.has(id)) {
+        completedSet.delete(id);
+      } else {
+        completedSet.add(id);
+      }
+      saveState();
+      
+      const card = document.getElementById(`card_${id}`);
+      if (card) {
+        card.classList.toggle('completed', completedSet.has(id));
+      }
+    };
+
+    window.toggleDetails = function(id) {
+      const el = document.getElementById(`detail_${id}`);
+      if (el) {
+        el.classList.toggle('open');
+      }
+    };
+
+    // Filter and Search Listeners
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      searchQuery = e.target.value.trim();
+      renderList();
     });
 
+    const filterBtns = document.querySelectorAll('.duo-tab-btn');
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        currentFilter = btn.getAttribute('data-filter');
-        renderCards();
+        activeFilter = btn.getAttribute('data-filter');
+        renderList();
       });
     });
 
-    renderCards();
+    // Simulation logic
+    const liquidSelect = document.getElementById('liquidSelect');
+    const massRange = document.getElementById('massRange');
+    const volumeRange = document.getElementById('volumeRange');
+    const massVal = document.getElementById('massVal');
+    const volVal = document.getElementById('volVal');
+    const simObject = document.getElementById('simObject');
+    const objDensitySpan = document.getElementById('objDensity');
+    const simResult = document.getElementById('simResult');
+
+    function updateSimulation() {
+      const liquidRho = parseFloat(liquidSelect.value);
+      const m = parseFloat(massRange.value);
+      const v = parseFloat(volumeRange.value);
+      const rho = parseFloat((m / v).toFixed(2));
+
+      massVal.textContent = m;
+      volVal.textContent = v;
+      objDensitySpan.textContent = rho;
+
+      // Calculate position relative to container
+      if (rho < liquidRho - 0.05) {
+        // Terapung
+        simObject.style.transform = 'translateY(-45px)';
+        simResult.innerHTML = 'Posisi: <span>Terapung</span> (ρ benda < ρ fluida)';
+      } else if (Math.abs(rho - liquidRho) <= 0.05) {
+        // Melayang
+        simObject.style.transform = 'translateY(0px)';
+        simResult.innerHTML = 'Posisi: <span>Melayang</span> (ρ benda ≈ ρ fluida)';
+      } else {
+        // Tenggelam
+        simObject.style.transform = 'translateY(48px)';
+        simResult.innerHTML = 'Posisi: <span>Tenggelam</span> (ρ benda > ρ fluida)';
+      }
+    }
+
+    liquidSelect.addEventListener('change', updateSimulation);
+    massRange.addEventListener('input', updateSimulation);
+    volumeRange.addEventListener('input', updateSimulation);
+
+    // Initial Execution
+    updateProgress();
+    renderList();
+    updateSimulation();
   </script>
 </body>
 </html>
