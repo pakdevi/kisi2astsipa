@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Guide ASTS IPA Kelas VII</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #0f172a;
+      --line: #e2e8f0;
+      --tag-bg: #f1f5f9;
+      --accent: #2563eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      line-height: 1.5;
+      padding: 2rem 1rem 5rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .badge-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.6rem;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    h1 {
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (min-width: 640px) {
+      .controls {
+        grid-template-columns: 1fr auto;
+      }
+    }
+
+    .search-box {
+      position: relative;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      font-family: inherit;
+      font-size: 0.95rem;
+      padding: 0.8rem 1rem;
+      border: 2px solid var(--border);
+      background: var(--surface);
+      outline: none;
+      border-radius: 0;
+    }
+
+    input[type="text"]:focus {
+      background: #fff;
+      box-shadow: 3px 3px 0px var(--border);
+    }
+
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .filter-btn {
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.6rem 0.9rem;
+      border: 2px solid var(--border);
+      background: var(--surface);
+      cursor: pointer;
+      border-radius: 0;
+      transition: background 0.1s ease;
+    }
+
+    .filter-btn.active {
+      background: var(--border);
+      color: #ffffff;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .card {
+      background: var(--surface);
+      border: 2px solid var(--border);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      box-shadow: 4px 4px 0px var(--border);
+    }
+
+    .card-topic {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+    }
+
+    .card-meta {
+      border-top: 1px solid var(--line);
+      padding-top: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 4rem 1rem;
+      border: 2px dashed var(--border);
+      background: var(--surface);
+    }
+
+    .empty-state p {
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 3.5rem;
+      border-top: 1px solid var(--line);
+      padding-top: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge-bar">
+        <span class="tag">SMP PGII 1 Bandung</span>
+        <span class="tag">Kurikulum Merdeka</span>
+        <span class="tag">IPA Kelas 7</span>
+        <span class="tag">ASTS Ganjil</span>
+      </div>
+      <h1>Peta Indikator ASTS IPA</h1>
+      <p class="subtitle">Panduan kompetensi dan indikator esensial persiapan asesmen tengah semester.</p>
+    </header>
+
+    <div class="controls">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Cari materi atau indikator capaian..." autocomplete="off">
+      </div>
+      <div class="filter-tabs" id="filterContainer">
+        <button class="filter-btn active" data-filter="all">Semua</button>
+        <button class="filter-btn" data-filter="Metode Ilmiah">Metode Ilmiah</button>
+        <button class="filter-btn" data-filter="Pengukuran">Pengukuran</button>
+        <button class="filter-btn" data-filter="Materi & Perubahan">Materi & Perubahan</button>
+        <button class="filter-btn" data-filter="Massa Jenis">Massa Jenis</button>
+      </div>
+    </div>
+
+    <main class="grid" id="indicatorsGrid"></main>
+
+    <div class="empty-state" id="emptyState" style="display: none;">
+      <p>Tidak ada indikator yang sesuai dengan kata kunci pencarian.</p>
+    </div>
+
+    <footer>
+      <span>Asesmen Sumatif Tengah Semester (ASTS)</span>
+      <span>Fokus pada pemahaman konsep dan literasi sains</span>
+    </footer>
+  </div>
+
+  <script>
+    const data = [
+      { cluster: "Pengukuran", topic: "Besaran & Satuan", desc: "Mengidentifikasi besaran dan satuannya sesuai Standar Internasional (SI)." },
+      { cluster: "Pengukuran", topic: "Besaran & Satuan", desc: "Mengubah konversi satuan massa ke dalam satuan Standar Internasional (SI)." },
+      { cluster: "Materi & Perubahan", topic: "Perubahan Zat", desc: "Mengidentifikasi jenis perubahan zat berdasarkan analisis gambar ilustrasi." },
+      { cluster: "Pengukuran", topic: "Pengukuran", desc: "Membedakan karakteristik serta fungsi alat ukur baku dan alat ukur tidak baku." },
+      { cluster: "Pengukuran", topic: "Pengukuran", desc: "Membaca dan menafsirkan skala hasil pengukuran massa secara presisi." },
+      { cluster: "Pengukuran", topic: "Pengukuran", desc: "Menghitung dan menentukan nilai massa benda dari sajian neraca timbangan." },
+      { cluster: "Pengukuran", topic: "Besaran Pokok", desc: "Mengklasifikasikan jenis-jenis besaran pokok dalam fisika beserta satuannya." },
+      { cluster: "Materi & Perubahan", topic: "Klasifikasi Materi", desc: "Menjelaskan konsep dasar dan pengertian materi dalam kajian sains." },
+      { cluster: "Metode Ilmiah", topic: "Metode Ilmiah", desc: "Mengurutkan sistematika dan alur langkah kerja metode ilmiah yang valid." },
+      { cluster: "Pengukuran", topic: "Pengukuran", desc: "Membedakan penggunaan dan sifat satuan baku dengan satuan tidak baku." },
+      { cluster: "Materi & Perubahan", topic: "Perubahan Zat", desc: "Menganalisis jenis transformasi materi pada peristiwa menggoreng." },
+      { cluster: "Materi & Perubahan", topic: "Perubahan Kimia", desc: "Menentukan ciri-ciri terjadinya reaksi atau perubahan kimia dari fenomena konkret." },
+      { cluster: "Massa Jenis", topic: "Massa Jenis", desc: "Menganalisis dan menentukan posisi relatif benda dalam fluida berbasis massa jenis." },
+      { cluster: "Pengukuran", topic: "Pengukuran Ruang", desc: "Menghitung parameter luas serta volume benda berdasarkan hasil pengukuran." },
+      { cluster: "Metode Ilmiah", topic: "Metode Ilmiah", desc: "Membedakan validitas prosedur antara investigasi ilmiah dan non-ilmiah." },
+      { cluster: "Metode Ilmiah", topic: "Metode Ilmiah", desc: "Menjodohkan tahapan investigasi metode ilmiah dengan aksi konkret pelaksanaannya." },
+      { cluster: "Metode Ilmiah", topic: "Keselamatan Kerja", desc: "Menjelaskan esensi dan prosedur keselamatan kerja di dalam laboratorium sains." },
+      { cluster: "Metode Ilmiah", topic: "Cabang IPA", desc: "Menjodohkan bidang cabang sains (IPA) dengan ruang lingkup objek kajiannya." },
+      { cluster: "Metode Ilmiah", topic: "Variabel Penelitian", desc: "Mengidentifikasi dan menentukan variabel kontrol serta variabel bebas-terikat." },
+      { cluster: "Metode Ilmiah", topic: "Metode Ilmiah", desc: "Menjelaskan implementasi tahapan investigasi ilmiah pada penyelesaian masalah riil." },
+      { cluster: "Materi & Perubahan", topic: "Perubahan Wujud", desc: "Menjodohkan jenis proses perubahan wujud zat dengan peristiwa aplikatifnya." },
+      { cluster: "Materi & Perubahan", topic: "Perubahan Fisika & Kimia", desc: "Membedakan prinsip dasar, sifat reaksi, dan indikator perubahan fisika vs kimia." },
+      { cluster: "Massa Jenis", topic: "Massa Jenis", desc: "Menerapkan prinsip kerapatan zat pada mekanisme benda mengapung dan tenggelam." },
+      { cluster: "Massa Jenis", topic: "Massa Jenis", desc: "Menganalisis alasan fisis di balik fenomena terapungnya objek/manusia di Laut Mati." },
+      { cluster: "Massa Jenis", topic: "Massa Jenis", desc: "Menganalisis korelasi matematis-fisis massa jenis terhadap perilaku material di fluida." },
+      { cluster: "Materi & Perubahan", topic: "Perubahan Wujud", desc: "Menjelaskan mekanisme perubahan wujud padat ke gas pada peristiwa menyublim." },
+      { cluster: "Materi & Perubahan", topic: "Perubahan Zat", desc: "Menyimpulkan jenis perubahan materi dari data tabel hasil observasi eksperimen." },
+      { cluster: "Materi & Perubahan", topic: "Campuran", desc: "Mengklasifikasikan sifat, fase, dan komponen campuran homogen serta heterogen." },
+      { cluster: "Pengukuran", topic: "Besaran Turunan", desc: "Menentukan penurunan rumus dan satuan besaran turunan volume dari besaran pokok." },
+      { cluster: "Pengukuran", topic: "Besaran Fisika", desc: "Menganalisis kategori besaran fisika yang terlibat dalam aktivitas fisis spesifik." },
+      { cluster: "Pengukuran", topic: "Instrumen Ukur", desc: "Menentukan ketepatan pemilihan instrumen alat ukur sesuai ketelitian objek ukur." },
+      { cluster: "Pengukuran", topic: "Instrumen Ukur", desc: "Memilih jenis alat ukur yang proporsional berdasarkan bentuk dan dimensi target." },
+      { cluster: "Pengukuran", topic: "Ketelitian & Kesalahan", desc: "Menentukan hasil ukur paling presisi serta mengidentifikasi potensi galat pengukuran." },
+      { cluster: "Pengukuran", topic: "Konversi Satuan", desc: "Melakukan perhitungan konversi antarsatuan panjang secara sistematis." },
+      { cluster: "Materi & Perubahan", topic: "Ciri Fisik Zat", desc: "Menganalisis karakteristik partikel serta wujud dan ciri fisik zat padat, cair, dan gas." }
+    ];
+
+    const grid = document.getElementById('indicatorsGrid');
+    const searchInput = document.getElementById('searchInput');
+    const emptyState = document.getElementById('emptyState');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+
+    let currentFilter = 'all';
+    let currentSearch = '';
+
+    function renderCards() {
+      const filtered = data.filter(item => {
+        const matchesFilter = currentFilter === 'all' || item.cluster === currentFilter;
+        const textToSearch = (item.topic + ' ' + item.desc + ' ' + item.cluster).toLowerCase();
+        const matchesSearch = textToSearch.includes(currentSearch.toLowerCase());
+        return matchesFilter && matchesSearch;
+      });
+
+      grid.innerHTML = '';
+
+      if (filtered.length === 0) {
+        emptyState.style.display = 'block';
+      } else {
+        emptyState.style.display = 'none';
+        filtered.forEach(item => {
+          const card = document.createElement('article');
+          card.className = 'card';
+          card.innerHTML = `
+            <div>
+              <span class="card-topic">${item.topic}</span>
+              <h2 class="card-title">${item.desc}</h2>
+            </div>
+            <div class="card-meta">
+              <span>Kluster: ${item.cluster}</span>
+              <span>Target Capaian</span>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+      }
+    }
+
+    searchInput.addEventListener('input', (e) => {
+      currentSearch = e.target.value.trim();
+      renderCards();
+    });
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.getAttribute('data-filter');
+        renderCards();
+      });
+    });
+
+    renderCards();
+  </script>
+</body>
+</html>
