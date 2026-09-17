@@ -2,1150 +2,1244 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Peta Belajar ASTS IPA Kelas 7</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Panduan ASTS IPA 7 - Study App</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,500;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --color-eager-green: #58cc02;
-      --color-eager-green-shade: #46a302;
-      --color-storybook-green: #d7ffb8;
-      --color-spark-blue: #1cb0f6;
-      --color-spark-blue-shade: #1899d6;
-      --color-fresh-leaf: #a5ed6e;
-      --color-night-ink: #000437;
-      --color-paper-white: #ffffff;
-      --color-charcoal: #4b4b4b;
-      --color-pencil-gray: #777777;
-      --color-faded-gray: #afafaf;
-      --color-border-light: #e5e5e5;
-      --color-card-bg: #ffffff;
-
-      --font-feather: 'Nunito', system-ui, -apple-system, sans-serif;
-      --font-duolingo-sans: 'Nunito', system-ui, -apple-system, sans-serif;
-
-      --radius-xl: 16px;
-      --radius-pill: 9999px;
+      --eager-green: #58cc02;
+      --eager-green-shade: #46a302;
+      --storybook-green: #d7ffb8;
+      --spark-blue: #1cb0f6;
+      --spark-blue-shade: #1899d6;
+      --fresh-leaf: #a5ed6e;
+      --duo-orange: #ff9600;
+      --duo-orange-shade: #cc7800;
+      --paper-white: #ffffff;
+      --charcoal: #4b4b4b;
+      --pencil-gray: #777777;
+      --faded-gray: #afafaf;
+      --border-gray: #e5e5e5;
+      --bg-canvas: #ffffff;
+      --font-duo: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      -webkit-tap-highlight-color: transparent;
     }
 
     body {
-      background-color: var(--color-paper-white);
-      color: var(--color-charcoal);
-      font-family: var(--font-duolingo-sans);
-      font-size: 17px;
+      background-color: var(--bg-canvas);
+      color: var(--charcoal);
+      font-family: var(--font-duo);
       line-height: 1.4;
-      -webkit-font-smoothing: antialiased;
+      padding-bottom: 90px; /* Space for mobile bottom bar */
     }
 
-    /* Top Navigation Bar */
-    header.duo-nav {
+    /* Mobile Header */
+    .top-header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background-color: var(--color-paper-white);
-      border-bottom: 2px solid var(--color-border-light);
-      padding: 12px 20px;
+      background: var(--paper-white);
+      border-bottom: 2px solid var(--border-gray);
+      padding: 12px 16px;
     }
 
-    .nav-container {
-      max-width: 1100px;
+    .top-header-inner {
+      max-width: 600px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    .logo-badge {
+    .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
-      text-decoration: none;
+      gap: 8px;
     }
 
-    .logo-icon {
-      width: 36px;
-      height: 36px;
-      background-color: var(--color-eager-green);
-      border-radius: 10px;
+    .brand-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--eager-green);
+      border-radius: 8px;
+      border-bottom: 3px solid var(--eager-green-shade);
       display: flex;
       align-items: center;
       justify-content: center;
-      border-bottom: 3px solid var(--color-eager-green-shade);
     }
 
-    .logo-icon svg {
-      width: 20px;
-      height: 20px;
-      fill: var(--color-paper-white);
+    .brand-icon svg {
+      width: 18px;
+      height: 18px;
+      fill: #ffffff;
     }
 
-    .logo-text {
-      font-family: var(--font-feather);
+    .brand-title {
+      font-size: 19px;
       font-weight: 900;
-      font-size: 22px;
+      color: var(--eager-green);
       letter-spacing: -0.02em;
-      color: var(--color-eager-green);
     }
 
-    .nav-pills {
+    .progress-pill {
       display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .stat-pill {
-      display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 6px 14px;
-      border-radius: var(--radius-xl);
-      border: 2px solid var(--color-border-light);
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--color-pencil-gray);
-      background: var(--color-paper-white);
-    }
-
-    .stat-pill span.num {
-      color: var(--color-spark-blue);
+      padding: 5px 12px;
+      border-radius: 999px;
+      border: 2px solid var(--border-gray);
+      font-size: 13px;
       font-weight: 800;
+      color: var(--pencil-gray);
     }
 
-    /* Hero Section */
-    .hero {
-      max-width: 900px;
-      margin: 40px auto 20px;
-      padding: 0 20px;
+    .progress-pill span.highlight {
+      color: var(--spark-blue);
+      font-weight: 900;
+    }
+
+    /* Layout Wrapper */
+    .app-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
       text-align: center;
+      padding: 16px 8px 24px;
     }
 
-    .hero-meta {
-      font-size: 14px;
-      font-weight: 800;
+    .hero-tag {
+      font-size: 11px;
+      font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: var(--color-pencil-gray);
-      margin-bottom: 12px;
+      color: var(--pencil-gray);
+      margin-bottom: 4px;
     }
 
-    .hero-title {
-      font-family: var(--font-feather);
-      font-size: clamp(32px, 5vw, 46px);
+    .hero-heading {
+      font-size: 26px;
       font-weight: 900;
+      color: var(--eager-green);
       letter-spacing: -0.02em;
-      line-height: 1.15;
-      color: var(--color-eager-green);
-      margin-bottom: 12px;
+      line-height: 1.2;
+      margin-bottom: 8px;
     }
 
-    .hero-subtitle {
-      font-size: 18px;
-      font-weight: 500;
-      color: var(--color-pencil-gray);
-      max-width: 580px;
-      margin: 0 auto 30px;
+    .hero-desc {
+      font-size: 15px;
+      color: var(--pencil-gray);
+      font-weight: 600;
     }
 
-    /* Progress Overview Card */
-    .progress-card {
-      max-width: 760px;
-      margin: 0 auto 40px;
-      background-color: var(--color-paper-white);
-      border: 2px solid var(--color-border-light);
-      border-radius: var(--radius-xl);
-      padding: 20px 24px;
-      border-bottom: 4px solid var(--color-border-light);
+    /* Overall Progress Bar */
+    .progress-widget {
+      background: var(--paper-white);
+      border: 2px solid var(--border-gray);
+      border-bottom: 4px solid var(--border-gray);
+      border-radius: 16px;
+      padding: 14px 16px;
+      margin-bottom: 24px;
     }
 
-    .progress-info {
+    .progress-meta {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
+      font-size: 13px;
       font-weight: 800;
-      font-size: 15px;
+      margin-bottom: 8px;
     }
 
-    .progress-info .title {
-      color: var(--color-charcoal);
+    .progress-meta .label {
+      color: var(--charcoal);
     }
 
-    .progress-info .count {
-      color: var(--color-eager-green);
+    .progress-meta .val {
+      color: var(--eager-green);
     }
 
     .progress-track {
-      width: 100%;
-      height: 16px;
-      background: var(--color-border-light);
-      border-radius: var(--radius-pill);
+      height: 14px;
+      background: var(--border-gray);
+      border-radius: 999px;
       overflow: hidden;
-      position: relative;
     }
 
     .progress-fill {
       height: 100%;
       width: 0%;
-      background-color: var(--color-eager-green);
-      border-radius: var(--radius-pill);
-      transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      background: var(--eager-green);
+      border-radius: 999px;
+      transition: width 0.3s ease;
     }
 
-    /* Interactive Lab Box */
-    .lab-section {
-      max-width: 760px;
-      margin: 0 auto 40px;
-      background: #fafafa;
-      border: 2px solid var(--color-border-light);
-      border-bottom: 4px solid var(--color-faded-gray);
-      border-radius: var(--radius-xl);
-      padding: 24px;
+    /* Section Cards */
+    .feature-card {
+      background: var(--paper-white);
+      border: 2px solid var(--border-gray);
+      border-bottom: 4px solid var(--border-gray);
+      border-radius: 16px;
+      padding: 18px 16px;
+      margin-bottom: 28px;
+      scroll-margin-top: 75px;
     }
 
-    .lab-header {
+    .feature-header {
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 16px;
-    }
-
-    .lab-header h2 {
-      font-size: 19px;
-      font-weight: 800;
-      color: var(--color-charcoal);
-    }
-
-    .lab-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
-    @media (min-width: 600px) {
-      .lab-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .lab-controls label {
-      display: block;
-      font-size: 13px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--color-pencil-gray);
       margin-bottom: 6px;
     }
 
-    .lab-controls select, .lab-controls input[type="range"] {
-      width: 100%;
-      margin-bottom: 16px;
-    }
-
-    .lab-controls select {
-      font-family: inherit;
-      font-weight: 700;
-      padding: 10px 14px;
-      border-radius: 12px;
-      border: 2px solid var(--color-border-light);
-      background: var(--color-paper-white);
-      color: var(--color-charcoal);
-      outline: none;
-    }
-
-    .lab-tank {
-      background: #eaf7fd;
-      border: 2px solid #b7e3f8;
-      border-radius: 14px;
-      height: 180px;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .lab-object {
-      width: 60px;
-      height: 60px;
-      background: #ffc800;
-      border: 2px solid #e5a400;
-      border-bottom: 4px solid #c28b00;
-      border-radius: 12px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+    .feature-badge {
       font-size: 11px;
-      font-weight: 800;
-      color: #794a00;
-      transition: transform 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
-      position: absolute;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 8px;
+      border-radius: 6px;
+      color: #ffffff;
     }
 
-    .lab-status {
-      margin-top: 10px;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--color-pencil-gray);
+    .badge-blue { background: var(--spark-blue); }
+    .badge-green { background: var(--eager-green); }
+    .badge-orange { background: var(--duo-orange); }
+
+    .feature-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--charcoal);
+    }
+
+    .feature-subtitle {
+      font-size: 13px;
+      color: var(--pencil-gray);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    /* IDE 3: Caliper Simulator (Mobile Touch Optimized) */
+    .caliper-box {
+      background: #f0f9ff;
+      border: 2px solid #bae6fd;
+      border-radius: 14px;
+      padding: 14px;
+      margin-bottom: 14px;
       text-align: center;
     }
 
-    .lab-status span {
-      color: var(--color-spark-blue);
-      font-weight: 800;
+    .caliper-readout-main {
+      font-size: 28px;
+      font-weight: 900;
+      color: #0284c7;
+      line-height: 1.1;
+      margin-bottom: 4px;
     }
 
-    /* Filters and Search */
-    .controls-wrapper {
-      max-width: 760px;
-      margin: 0 auto 30px;
+    .caliper-readout-formula {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--charcoal);
+    }
+
+    .caliper-graphic {
+      width: 100%;
+      background: #ffffff;
+      border: 2px solid var(--border-gray);
+      border-radius: 10px;
+      padding: 8px 4px;
+      margin: 12px 0;
+      overflow: hidden;
+    }
+
+    .range-wrap {
+      margin-top: 10px;
+    }
+
+    .range-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--pencil-gray);
+      margin-bottom: 6px;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      height: 8px;
+      border-radius: 5px;
+      background: var(--border-gray);
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--spark-blue);
+      border: 3px solid var(--paper-white);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      cursor: pointer;
+    }
+
+    /* IDE 4: Interactive Unit Metric Ladder */
+    .ladder-grid {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 6px;
+      margin-bottom: 14px;
     }
 
-    .search-input {
+    .ladder-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 2px solid var(--border-gray);
+      border-bottom: 3px solid var(--border-gray);
+      background: var(--paper-white);
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 800;
+      transition: all 0.1s ease;
+    }
+
+    .ladder-item:active {
+      transform: translateY(2px);
+      border-bottom-width: 1px;
+    }
+
+    .ladder-item.selected-from {
+      border-color: var(--spark-blue);
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+
+    .ladder-item.selected-to {
+      border-color: var(--eager-green);
+      background: var(--storybook-green);
+      color: #2b5e02;
+    }
+
+    .ladder-tag-pill {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .ladder-output-box {
+      background: #f8fafc;
+      border: 2px solid var(--border-gray);
+      border-radius: 14px;
+      padding: 14px;
+      text-align: center;
+    }
+
+    .ladder-calc-steps {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--pencil-gray);
+      margin-bottom: 4px;
+    }
+
+    .ladder-calc-value {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--eager-green);
+    }
+
+    /* IDE 2: Concept Challenge (Cards) */
+    .challenge-card {
+      background: #ffffff;
+      border: 2px solid var(--border-gray);
+      border-bottom: 4px solid var(--border-gray);
+      border-radius: 14px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+
+    .challenge-tag {
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--spark-blue);
+      margin-bottom: 6px;
+    }
+
+    .challenge-q {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--charcoal);
+      margin-bottom: 12px;
+      line-height: 1.35;
+    }
+
+    .challenge-ans {
+      display: none;
+      background: #f0fdf4;
+      border: 2px solid var(--fresh-leaf);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 13px;
+      color: #14532d;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    .challenge-ans.show {
+      display: block;
+    }
+
+    .duo-btn-small {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
       font-family: inherit;
-      font-size: 16px;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 2px solid var(--border-gray);
+      border-bottom: 3px solid var(--faded-gray);
+      background: #ffffff;
+      color: var(--spark-blue);
+      cursor: pointer;
+    }
+
+    .duo-btn-small:active {
+      transform: translateY(2px);
+      border-bottom-width: 1px;
+    }
+
+    /* IDE 5: Common Traps */
+    .trap-box {
+      background: #fffbeb;
+      border: 2px solid #fef3c7;
+      border-left: 5px solid var(--duo-orange);
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+    }
+
+    .trap-name {
+      font-size: 14px;
+      font-weight: 900;
+      color: #92400e;
+      margin-bottom: 6px;
+    }
+
+    .trap-wrong {
+      font-size: 13px;
+      font-weight: 700;
+      color: #b91c1c;
+      margin-bottom: 4px;
+    }
+
+    .trap-right {
+      font-size: 13px;
+      font-weight: 800;
+      color: #15803d;
+      margin-bottom: 4px;
+    }
+
+    .trap-explanation {
+      font-size: 12px;
+      color: var(--charcoal);
+      line-height: 1.4;
       font-weight: 600;
-      padding: 14px 20px;
-      border-radius: var(--radius-xl);
-      border: 2px solid var(--color-border-light);
-      background-color: var(--color-paper-white);
-      color: var(--color-charcoal);
-      outline: none;
-      transition: border-color 0.2s ease;
     }
 
-    .search-input:focus {
-      border-color: var(--color-spark-blue);
-    }
-
-    .filter-tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .duo-tab-btn {
+    /* Indicators Checklist */
+    .search-input-mobile {
+      width: 100%;
       font-family: inherit;
       font-size: 14px;
       font-weight: 700;
-      padding: 10px 16px;
-      border-radius: var(--radius-xl);
-      border: 2px solid var(--color-border-light);
-      border-bottom: 4px solid var(--color-border-light);
-      background: var(--color-paper-white);
-      color: var(--color-pencil-gray);
-      cursor: pointer;
-      transition: all 0.1s ease;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 2px solid var(--border-gray);
+      background: var(--paper-white);
       outline: none;
+      margin-bottom: 12px;
     }
 
-    .duo-tab-btn:hover {
-      background: #fafafa;
+    .search-input-mobile:focus {
+      border-color: var(--spark-blue);
     }
 
-    .duo-tab-btn:active {
-      transform: translateY(2px);
-      border-bottom-width: 2px;
-    }
-
-    .duo-tab-btn.active {
-      border-color: var(--color-spark-blue);
-      border-bottom-color: var(--color-spark-blue-shade);
-      background: #eaf7fd;
-      color: var(--color-spark-blue);
-    }
-
-    /* Target Indicators List */
-    .study-list {
-      max-width: 760px;
-      margin: 0 auto;
+    .filter-chips {
       display: flex;
-      flex-direction: column;
-      gap: 16px;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 14px;
+      scrollbar-width: none;
     }
 
-    .target-card {
-      background: var(--color-paper-white);
-      border: 2px solid var(--color-border-light);
-      border-bottom: 4px solid var(--color-border-light);
-      border-radius: var(--radius-xl);
-      padding: 20px;
-      transition: border-color 0.2s ease;
+    .filter-chips::-webkit-scrollbar {
+      display: none;
     }
 
-    .target-card.completed {
-      border-color: var(--color-fresh-leaf);
-      border-bottom-color: var(--color-eager-green);
-      background-color: #fbfdf9;
+    .chip-btn {
+      flex-shrink: 0;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 2px solid var(--border-gray);
+      background: var(--paper-white);
+      color: var(--pencil-gray);
+      cursor: pointer;
     }
 
-    .card-top {
+    .chip-btn.active {
+      border-color: var(--spark-blue);
+      background: #e0f2fe;
+      color: var(--spark-blue);
+    }
+
+    .indicator-card {
+      background: var(--paper-white);
+      border: 2px solid var(--border-gray);
+      border-bottom: 3px solid var(--border-gray);
+      border-radius: 14px;
+      padding: 14px;
+      margin-bottom: 10px;
+      transition: border-color 0.2s;
+    }
+
+    .indicator-card.completed {
+      border-color: var(--fresh-leaf);
+      border-bottom-color: var(--eager-green);
+      background: #fbfdf9;
+    }
+
+    .ind-row {
       display: flex;
       align-items: flex-start;
-      gap: 16px;
+      gap: 12px;
     }
 
-    /* Duolingo Checkmark Button */
-    .check-btn {
+    .btn-check {
       flex-shrink: 0;
-      width: 32px;
-      height: 32px;
-      border-radius: 10px;
-      border: 2px solid var(--color-faded-gray);
-      border-bottom: 3px solid var(--color-faded-gray);
-      background: var(--color-paper-white);
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      border: 2px solid var(--faded-gray);
+      border-bottom: 3px solid var(--faded-gray);
+      background: #ffffff;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-top: 2px;
-      transition: all 0.15s ease;
     }
 
-    .check-btn:active {
-      transform: translateY(2px);
+    .btn-check:active {
+      transform: translateY(1px);
       border-bottom-width: 1px;
     }
 
-    .check-btn svg {
-      width: 18px;
-      height: 18px;
+    .btn-check svg {
+      width: 16px;
+      height: 16px;
       fill: none;
-      stroke: var(--color-paper-white);
+      stroke: #ffffff;
       stroke-width: 3;
       stroke-linecap: round;
       stroke-linejoin: round;
       display: none;
     }
 
-    .target-card.completed .check-btn {
-      background: var(--color-eager-green);
-      border-color: var(--color-eager-green);
-      border-bottom-color: var(--color-eager-green-shade);
+    .indicator-card.completed .btn-check {
+      background: var(--eager-green);
+      border-color: var(--eager-green);
+      border-bottom-color: var(--eager-green-shade);
     }
 
-    .target-card.completed .check-btn svg {
+    .indicator-card.completed .btn-check svg {
       display: block;
     }
 
-    .card-body {
+    .ind-content {
       flex-grow: 1;
     }
 
-    .card-tags {
+    .ind-pills {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 8px;
+      gap: 4px;
+      margin-bottom: 4px;
     }
 
-    .card-pill {
-      font-size: 12px;
+    .ind-pill {
+      font-size: 10px;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: 3px 10px;
-      border-radius: var(--radius-pill);
+      padding: 2px 6px;
+      border-radius: 4px;
       background: #f1f5f9;
-      color: var(--color-pencil-gray);
+      color: var(--pencil-gray);
     }
 
-    .target-card.completed .card-pill {
-      background: var(--color-storybook-green);
-      color: #3b7c05;
-    }
-
-    .card-title {
-      font-size: 17px;
+    .ind-title {
+      font-size: 14px;
       font-weight: 700;
-      color: var(--color-charcoal);
+      color: var(--charcoal);
       line-height: 1.35;
       margin-bottom: 8px;
     }
 
-    .card-details {
-      margin-top: 14px;
-      padding-top: 14px;
-      border-top: 1px dashed var(--color-border-light);
-      display: none;
-    }
-
-    .card-details.open {
-      display: block;
-    }
-
-    .concept-box {
-      background: #f8fafc;
-      border-left: 3px solid var(--color-spark-blue);
-      padding: 10px 14px;
-      border-radius: 8px;
-      font-size: 14px;
-      color: var(--color-charcoal);
-      line-height: 1.45;
-      margin-bottom: 12px;
-    }
-
-    .concept-box strong {
-      display: block;
-      color: var(--color-night-ink);
-      margin-bottom: 2px;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .card-actions {
+    .ind-actions {
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
       align-items: center;
     }
 
-    .duo-link-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
+    .ind-btn-text {
+      font-size: 12px;
       font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--color-spark-blue);
-      background: transparent;
-      border: 2px solid var(--color-border-light);
-      border-bottom: 3px solid var(--color-faded-gray);
-      padding: 6px 14px;
-      border-radius: 12px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.1s ease;
-    }
-
-    .duo-link-btn:active {
-      transform: translateY(2px);
-      border-bottom-width: 1px;
-    }
-
-    .duo-link-btn:hover {
-      background: #f8fafc;
-    }
-
-    .toggle-hint-btn {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--color-pencil-gray);
+      color: var(--pencil-gray);
       background: none;
       border: none;
       cursor: pointer;
-      padding: 6px 0;
       text-decoration: underline;
     }
 
-    /* Empty state */
-    .empty-block {
-      text-align: center;
-      padding: 60px 20px;
-      background: #f8fafc;
-      border: 2px dashed var(--color-border-light);
-      border-radius: var(--radius-xl);
-      color: var(--color-pencil-gray);
-      font-weight: 700;
+    .ind-btn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--spark-blue);
+      text-decoration: none;
+      padding: 4px 8px;
+      border-radius: 8px;
+      border: 1px solid var(--border-gray);
+    }
+
+    .ind-drawer {
       display: none;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      background: #f8fafc;
+      border-left: 3px solid var(--spark-blue);
+      font-size: 13px;
+      line-height: 1.4;
+      font-weight: 600;
     }
 
-    /* Footer Band */
-    footer.duo-footer {
-      margin-top: 80px;
-      background: var(--color-eager-green);
-      color: var(--color-paper-white);
-      padding: 48px 20px;
-      border-top: 4px solid var(--color-eager-green-shade);
+    .ind-drawer.open {
+      display: block;
     }
 
-    .footer-content {
-      max-width: 900px;
-      margin: 0 auto;
+    /* Mobile Bottom Navigation */
+    .mobile-nav-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: var(--paper-white);
+      border-top: 2px solid var(--border-gray);
+      padding: 6px 12px calc(6px + env(safe-area-inset-bottom));
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .nav-item {
       display: flex;
       flex-direction: column;
       align-items: center;
-      text-align: center;
-      gap: 16px;
-    }
-
-    .footer-title {
-      font-family: var(--font-feather);
-      font-size: 24px;
+      gap: 3px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 11px;
       font-weight: 800;
-      color: var(--color-paper-white);
+      color: var(--pencil-gray);
+      text-decoration: none;
     }
 
-    .footer-text {
-      font-size: 15px;
-      color: var(--color-storybook-green);
-      max-width: 600px;
+    .nav-item svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.2;
+    }
+
+    .nav-item.active {
+      color: var(--eager-green);
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Sticky Navigation -->
-  <header class="duo-nav">
-    <div class="nav-container">
-      <a href="#" class="logo-badge">
-        <div class="logo-icon">
+  <!-- Top Sticky Header -->
+  <header class="top-header">
+    <div class="top-header-inner">
+      <div class="brand">
+        <div class="brand-icon">
           <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
         </div>
-        <span class="logo-text">IPA Quest</span>
-      </a>
-      <div class="nav-pills">
-        <div class="stat-pill">
-          <span>Target Selesai:</span>
-          <span class="num" id="statCompleted">0/35</span>
-        </div>
+        <span class="brand-title">IPA Quest 7</span>
+      </div>
+      <div class="progress-pill">
+        <span>Target:</span>
+        <span class="highlight" id="topCounter">0/35</span>
       </div>
     </div>
   </header>
 
-  <!-- Hero Header -->
-  <section class="hero">
-    <div class="hero-meta">SMP PGII 1 BANDUNG · ASTS KELAS 7</div>
-    <h1 class="hero-title">Siap Tuntaskan Sains!</h1>
-    <p class="hero-subtitle">Kuasai 35 indikator esensial lewat simulasi konsep, ringkasan inti materi, dan video panduan.</p>
+  <div class="app-container">
 
-    <!-- Progress Card -->
-    <div class="progress-card">
-      <div class="progress-info">
-        <span class="title">Tingkat Penguasaan Materi</span>
-        <span class="count" id="progressPercentage">0%</span>
+    <!-- Hero Header -->
+    <div class="hero-banner">
+      <div class="hero-tag">SMP PGII 1 Bandung · ASTS Semester Ganjil</div>
+      <h1 class="hero-heading">Siap Sukses Ujian IPA!</h1>
+      <p class="hero-desc">Pahami alur konsep, simulasi hitung, dan hindari jebakan soal.</p>
+    </div>
+
+    <!-- Overall Progress -->
+    <div class="progress-widget">
+      <div class="progress-meta">
+        <span class="label">Kesiapan Indikator</span>
+        <span class="val" id="progressPct">0%</span>
       </div>
       <div class="progress-track">
         <div class="progress-fill" id="progressBar"></div>
       </div>
     </div>
-  </section>
 
-  <!-- Interactive Lab Simulation: Massa Jenis Fluida -->
-  <section class="lab-section">
-    <div class="lab-header">
-      <h2>Mini Lab: Simulasi Terapung & Tenggelam</h2>
-    </div>
-    <div class="lab-grid">
-      <div class="lab-controls">
-        <label for="liquidSelect">Pilih Jenis Cairan</label>
-        <select id="liquidSelect">
-          <option value="1.0">Air Bersih (1,0 g/cm³)</option>
-          <option value="0.8">Minyak Goreng (0,8 g/cm³)</option>
-          <option value="1.24">Air Laut Mati (1,24 g/cm³)</option>
-        </select>
+    <!-- FITUR 3: Simulator Jangka Sorong Interaktif -->
+    <section class="feature-card" id="sec-caliper">
+      <div class="feature-header">
+        <span class="feature-badge badge-blue">Fitur 3</span>
+        <h2 class="feature-title">Simulator Jangka Sorong</h2>
+      </div>
+      <p class="feature-subtitle">Geser pengukur di bawah untuk melatih ketelitian membaca Skala Utama & Skala Nonius.</p>
 
-        <label for="massRange">Massa Benda (<span id="massVal">80</span> gram)</label>
-        <input type="range" id="massRange" min="20" max="200" step="10" value="80">
-
-        <label for="volumeRange">Volume Benda (<span id="volVal">100</span> cm³)</label>
-        <input type="range" id="volumeRange" min="50" max="150" step="10" value="100">
+      <div class="caliper-box">
+        <div class="caliper-readout-main" id="caliperResult">2.46 cm</div>
+        <div class="caliper-readout-formula" id="caliperCalc">Skala Utama: 2.4 cm + Nonius: 6 × 0.01 = 2.46 cm</div>
       </div>
 
-      <div>
-        <div class="lab-tank">
-          <div class="lab-object" id="simObject">
-            <span id="objDensity">0.8</span>
-            <span>g/cm³</span>
-          </div>
+      <div class="caliper-graphic">
+        <svg id="caliperSvg" viewBox="0 0 460 110" width="100%" height="110">
+          <!-- Main Ruler Bar -->
+          <rect x="5" y="15" width="450" height="40" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" rx="3"/>
+          <g id="mainTicks" font-size="8" font-family="Nunito" font-weight="700" fill="#475569" text-anchor="middle"></g>
+          
+          <!-- Vernier Caliper Slider -->
+          <g id="sliderGroup" transform="translate(120, 55)">
+            <rect x="0" y="0" width="110" height="45" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5" rx="3"/>
+            <g id="vernierTicks" font-size="8" font-family="Nunito" font-weight="800" fill="#0369a1" text-anchor="middle"></g>
+          </g>
+        </svg>
+      </div>
+
+      <div class="range-wrap">
+        <div class="range-label">
+          <span>Tarik Slider Pengukur</span>
+          <span id="sliderValueText">2.46 cm</span>
         </div>
-        <div class="lab-status" id="simResult">Posisi: <span>Terapung</span></div>
+        <input type="range" id="caliperRange" min="0" max="350" value="246">
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Search & Filter Area -->
-  <section class="controls-wrapper">
-    <input type="text" id="searchInput" class="search-input" placeholder="Cari indikator, besaran, rumus, atau konsep..." autocomplete="off">
-    
-    <div class="filter-tabs" id="filterButtons">
-      <button class="duo-tab-btn active" data-filter="all">Semua Materi (35)</button>
-      <button class="duo-tab-btn" data-filter="Metode Ilmiah">Metode Ilmiah</button>
-      <button class="duo-tab-btn" data-filter="Pengukuran">Pengukuran</button>
-      <button class="duo-tab-btn" data-filter="Perubahan Zat">Zat & Perubahan</button>
-      <button class="duo-tab-btn" data-filter="Massa Jenis">Massa Jenis</button>
-    </div>
-  </section>
+    <!-- FITUR 4: Tangga Satuan SI Interaktif -->
+    <section class="feature-card" id="sec-ladder">
+      <div class="feature-header">
+        <span class="feature-badge badge-green">Fitur 4</span>
+        <h2 class="feature-title">Tangga Konversi Satuan SI</h2>
+      </div>
+      <p class="feature-subtitle">Tap satuan asal, lalu tap satuan tujuan untuk melihat langkah pengalian atau pembagiannya.</p>
 
-  <!-- Indicators List -->
-  <main class="study-list" id="indicatorContainer"></main>
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+        <label style="font-size:13px; font-weight:800; color:var(--pencil-gray);">Nilai:</label>
+        <input type="number" id="ladderInput" value="250" style="width:100px; padding:6px 10px; font-family:inherit; font-size:15px; font-weight:800; border-radius:8px; border:2px solid var(--border-gray);">
+      </div>
 
-  <div class="empty-block" id="emptyNotice">
-    Tidak ada indikator capaian yang cocok dengan kata kunci pencarian.
+      <div class="ladder-grid" id="ladderGrid"></div>
+
+      <div class="ladder-output-box">
+        <div class="ladder-calc-steps" id="ladderSteps">Dari Sentimeter ke Meter (Naik 2 tingkat)</div>
+        <div class="ladder-calc-value" id="ladderOutput">250 cm = 2.5 m</div>
+      </div>
+    </section>
+
+    <!-- FITUR 2: Tantangan Analisis Konsep (Active Recall) -->
+    <section class="feature-card" id="sec-challenge">
+      <div class="feature-header">
+        <span class="feature-badge badge-blue">Fitur 2</span>
+        <h2 class="feature-title">Tantangan Nalar Sains</h2>
+      </div>
+      <p class="feature-subtitle">Uji logika analisismu pada fenomena nyata sebelum membuka jawaban ilmiah.</p>
+
+      <div id="challengeList"></div>
+    </section>
+
+    <!-- FITUR 5: Radar Jebakan Konsep -->
+    <section class="feature-card" id="sec-traps">
+      <div class="feature-header">
+        <span class="feature-badge badge-orange">Fitur 5</span>
+        <h2 class="feature-title">Radar Jebakan Konsep</h2>
+      </div>
+      <p class="feature-subtitle">Koreksi miskonsepsi yang paling sering mengecoh pemahaman siswa.</p>
+
+      <div id="trapsList"></div>
+    </section>
+
+    <!-- 35 Indikator Pokok ASTS -->
+    <section class="feature-card" id="sec-indicators">
+      <div class="feature-header">
+        <span class="feature-badge badge-green">Checklist</span>
+        <h2 class="feature-title">35 Indikator Capaian</h2>
+      </div>
+      <p class="feature-subtitle">Tandai indikator yang sudah kamu pahami. Status tersimpan otomatis di browser HP.</p>
+
+      <input type="text" id="searchInput" class="search-input-mobile" placeholder="Cari materi (misal: massa jenis, neraca, kimia)...">
+
+      <div class="filter-chips" id="filterChips">
+        <button class="chip-btn active" data-cat="all">Semua (35)</button>
+        <button class="chip-btn" data-cat="Pengukuran">Pengukuran</button>
+        <button class="chip-btn" data-cat="Metode Ilmiah">Metode Ilmiah</button>
+        <button class="chip-btn" data-cat="Zat & Perubahan">Zat & Perubahan</button>
+        <button class="chip-btn" data-cat="Massa Jenis">Massa Jenis</button>
+      </div>
+
+      <div id="indicatorsList"></div>
+    </section>
+
   </div>
 
-  <!-- Footer Full-Bleed Band -->
-  <footer class="duo-footer">
-    <div class="footer-content">
-      <div class="footer-title">Belajar Sains Jadi Jelas dan Terarah.</div>
-      <p class="footer-text">Gunakan panduan ini untuk menguji pemahaman konsep sebelum asesmen ASTS. Tetap jujur, teliti, dan utamakan pemahaman esensial.</p>
-    </div>
-  </footer>
+  <!-- Mobile Bottom Navigation Bar -->
+  <nav class="mobile-nav-bar">
+    <a href="#sec-indicators" class="nav-item active">
+      <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      <span>35 Kisi</span>
+    </a>
+    <a href="#sec-caliper" class="nav-item">
+      <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><line x1="8" y1="6" x2="8" y2="12"/><line x1="12" y1="6" x2="12" y2="10"/><line x1="16" y1="6" x2="16" y2="12"/></svg>
+      <span>Sorong</span>
+    </a>
+    <a href="#sec-ladder" class="nav-item">
+      <svg viewBox="0 0 24 24"><path d="M6 3v18M18 3v18M6 8h12M6 14h12"/></svg>
+      <span>Tangga SI</span>
+    </a>
+    <a href="#sec-challenge" class="nav-item">
+      <svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      <span>Tantangan</span>
+    </a>
+    <a href="#sec-traps" class="nav-item">
+      <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <span>Jebakan</span>
+    </a>
+  </nav>
 
   <script>
-    // Data indikator dan konsep murni dari kisi-kisi (tanpa nomor soal dan tanpa kunci jawaban)
-    const indicatorsData = [
+    // Data 35 Indikator Murni (Fokus Materi & Capaian, Tanpa Bocoran No Soal & Kunci)
+    const indicators = [
+      { id: "k1", cat: "Pengukuran", topic: "Besaran & Satuan", title: "Mengidentifikasi besaran dan satuannya sesuai Standar Internasional (SI)", concept: "7 Besaran Pokok SI: Panjang (m), Massa (kg), Waktu (s), Suhu (Kelvin), Kuat Arus (A), Jumlah Zat (mol), Intensitas Cahaya (cd).", yt: "besaran pokok dan satuan internasional smp kelas 7" },
+      { id: "k2", cat: "Pengukuran", topic: "Besaran & Satuan", title: "Mengubah konversi satuan massa ke dalam satuan SI", concept: "Satuan massa standar SI adalah Kilogram (kg). Contoh: 1 kuintal = 100 kg, 1 gram = 0,001 kg (dibagi 1.000).", yt: "konversi satuan massa smp kelas 7" },
+      { id: "k3", cat: "Zat & Perubahan", topic: "Perubahan Zat", title: "Mengidentifikasi jenis perubahan zat berdasarkan gambar peristiwa", concept: "Perhatikan apakah ada materi baru. Perubahan wujud/bentuk adalah fisika; munculnya endapan, gas, api, atau bau khas adalah kimia.", yt: "perubahan fisika dan kimia kelas 7 kurikulum merdeka" },
+      { id: "k4", cat: "Pengukuran", topic: "Pengukuran", title: "Membedakan karakteristik alat ukur baku dan tidak baku", concept: "Alat baku (mistar, jangka sorong) nilainya pasti dan universal. Alat tidak baku (jengkal, depa, langkah kaki) nilainya berbeda-beda tergantung orangnya.", yt: "pengukuran baku dan tidak baku ipa kelas 7" },
+      { id: "k5", cat: "Pengukuran", topic: "Pengukuran", title: "Membaca dan menafsirkan skala pengukuran neraca massa", concept: "Massa benda pada neraca Ohaus adalah penjumlahan seluruh posisi anting di ketiga lengannya (ratusan + puluhan + satuan).", yt: "cara membaca neraca ohaus 3 lengan" },
+      { id: "k6", cat: "Pengukuran", topic: "Pengukuran", title: "Menentukan massa benda dari kesetimbangan anak timbangan", concept: "Saat neraca berada pada kondisi setimbang datar, massa benda = total nilai seluruh anak timbangan pengimbang di lengan lainnya.", yt: "menghitung massa neraca sama lengan ipa" },
+      { id: "k7", cat: "Pengukuran", topic: "Besaran Pokok", title: "Mengklasifikasikan besaran pokok dalam fisika", concept: "Jembatan keledai 7 besaran pokok: JIWA SMP (Jumlah zat, Intensitas, Waktu, Arus, Suhu, Massa, Panjang).", yt: "tujuh besaran pokok ipa smp kelas 7" },
+      { id: "k8", cat: "Zat & Perubahan", topic: "Materi", title: "Menjelaskan konsep dasar dan pengertian materi", concept: "Materi adalah segala sesuatu yang mempunyai massa dan menempati suatu ruang (memiliki volume).", yt: "pengertian materi dan klasifikasinya ipa smp" },
+      { id: "k9", cat: "Metode Ilmiah", topic: "Metode Ilmiah", title: "Mengurutkan tahapan kerja metode ilmiah yang valid", concept: "Alur penyelidikan: (1) Observasi -> (2) Masalah -> (3) Hipotesis -> (4) Eksperimen -> (5) Analisis Data -> (6) Kesimpulan.", yt: "langkah langkah metode ilmiah kelas 7" },
+      { id: "k10", cat: "Pengukuran", topic: "Pengukuran", title: "Membedakan sifat dan reliabilitas satuan baku vs tidak baku", concept: "Satuan baku memiliki nilai pasti dan disepakati internasional. Satuan tidak baku tidak valid untuk eksperimen ilmiah.", yt: "satuan baku dan tidak baku smp kelas 7" },
+      { id: "k11", cat: "Zat & Perubahan", topic: "Perubahan Zat", title: "Menganalisis transformasi zat pada proses menggoreng", concept: "Menggoreng bahan makanan memicu reaksi denaturasi protein yang ireversibel (tidak dapat kembali) sehingga tergolong Perubahan Kimia.", yt: "contoh perubahan kimia dalam kehidupan sehari-hari" },
+      { id: "k12", cat: "Zat & Perubahan", topic: "Perubahan Zat", title: "Menentukan indikator reaksi kimia dari suatu peristiwa", concept: "4 Ciri reaksi kimia: timbul endapan baru, pembentukan gas berbusa/berbau, perubahan warna permanen, atau perubahan energi kalor.", yt: "tanda tanda perubahan kimia ipa kelas 7" },
+      { id: "k13", cat: "Massa Jenis", topic: "Massa Jenis", title: "Menentukan posisi relatif benda dalam fluida berbasis massa jenis", concept: "Terapung jika massa jenis benda < zat cair. Melayang jika massa jenis benda = zat cair. Tenggelam jika massa jenis benda > zat cair.", yt: "posisi benda dalam air terapung melayang tenggelam" },
+      { id: "k14", cat: "Pengukuran", topic: "Pengukuran Ruang", title: "Menentukan luas dan volume berdasarkan pengukuran", concept: "Volume zat padat tak beraturan dihitung dengan gelas ukur berisi air: Volume benda = Volume akhir - Volume awal.", yt: "mengukur volume benda tak beraturan dengan gelas ukur" },
+      { id: "k15", cat: "Metode Ilmiah", topic: "Metode Ilmiah", title: "Membedakan penyelidikan ilmiah dan non-ilmiah", concept: "Sains berpijak pada fakta terukur, data objektif, dan dapat diuji ulang (replikasi). Non-ilmiah berlandaskan praduga atau mitos.", yt: "hakikat sains dan metode ilmiah smp" },
+      { id: "k16", cat: "Metode Ilmiah", topic: "Metode Ilmiah", title: "Menjodohkan tahapan metode ilmiah dengan aksi riset", concept: "Mencatat suhu setiap jam = Mengumpulkan data; Membuat dugaan sementara sebelum tes = Merumuskan hipotesis.", yt: "contoh penerapan tahapan metode ilmiah ipa" },
+      { id: "k17", cat: "Metode Ilmiah", topic: "Keselamatan Kerja", title: "Menjelaskan prosedur keselamatan kerja di laboratorium IPA", concept: "Gunakan jas lab, kacamata pelindung, jangan menghirup uap kimia secara langsung (kibaskan dengan tangan), dan ketahui letak APAR.", yt: "keselamatan kerja di laboratorium ipa smp kelas 7" },
+      { id: "k18", cat: "Metode Ilmiah", topic: "Cabang IPA", title: "Menjodohkan bidang cabang IPA dengan objek kajiannya", concept: "Fisika (energi & materi), Kimia (reaksi & susunan zat), Biologi (makhluk hidup), Geologi (bumi & batuan), Astronomi (luar angkasa).", yt: "cabang cabang ilmu ipa kelas 7 kurikulum merdeka" },
+      { id: "k19", cat: "Metode Ilmiah", topic: "Variabel Penelitian", title: "Menentukan variabel bebas, terikat, dan kontrol", concept: "Variabel Bebas: yang sengaja diubah peneliti. Terikat: hasil yang diukur/diamati. Kontrol: faktor lain yang wajib dijaga tetap konstan.", yt: "variabel bebas terikat kontrol ipa kelas 7" },
+      { id: "k20", cat: "Metode Ilmiah", topic: "Metode Ilmiah", title: "Menjelaskan penerapan tahapan investigasi ilmiah untuk problem riil", concept: "Menggunakan cara berpikir runtut dan berbasis data untuk memecahkan persoalan sehari-hari (misal: pencemaran air sungai).", yt: "metode ilmiah kurikulum merdeka kelas 7" },
+      { id: "k21", cat: "Zat & Perubahan", topic: "Perubahan Wujud", title: "Menjodohkan proses perubahan wujud dengan contohnya", concept: "Membeku (cair -> padat), Mencair (padat -> cair), Menguap (cair -> gas), Mengembun (gas -> cair), Menyublim (padat -> gas).", yt: "perubahan wujud zat ipa smp kelas 7" },
+      { id: "k22", cat: "Zat & Perubahan", topic: "Perubahan Zat", title: "Membedakan sifat reaksi fisika vs kimia", concept: "Fisika: susunan partikel tetap, hanya bentuk/wujud yang berubah (bolak-balik). Kimia: terbentuk molekul baru dan bersifat permanen.", yt: "perbedaan perubahan fisika dan kimia kelas 7" },
+      { id: "k23", cat: "Massa Jenis", topic: "Massa Jenis", title: "Menerapkan prinsip kerapatan zat pada mekanisme benda mengapung", concept: "Rumus Massa Jenis: ρ = m / V. Benda dengan rongga udara besar memiliki volume total tinggi, membuat massa jenis rata-ratanya mengecil.", yt: "rumus massa jenis ipa smp kelas 7" },
+      { id: "k24", cat: "Massa Jenis", topic: "Massa Jenis", title: "Menganalisis fenomena manusia mudah terapung di Laut Mati", concept: "Kadar garam terlarut Laut Mati sangat tinggi (~30%), menjadikan massa jenis airnya (~1,24 g/cm³) jauh melampaui massa jenis tubuh (~0,98 g/cm³).", yt: "mengapa kita bisa mengapung di laut mati sains" },
+      { id: "k25", cat: "Massa Jenis", topic: "Massa Jenis", title: "Menentukan hubungan matematis-fisis massa jenis benda", concept: "Massa jenis merupakan ciri murni setiap zat. Balok besi 1 kg atau 1 ton memiliki massa jenis yang persis sama.", yt: "konsep massa jenis terapung melayang tenggelam" },
+      { id: "k26", cat: "Zat & Perubahan", topic: "Perubahan Wujud", title: "Menjelaskan mekanisme perubahan wujud menyublim", concept: "Menyublim terjadi saat zat padat langsung berubah fasa menjadi gas tanpa mencair terlebih dahulu (contoh: kapur barus / dry ice).", yt: "proses menyublim kapur barus ipa" },
+      { id: "k27", cat: "Zat & Perubahan", topic: "Perubahan Zat", title: "Menyimpulkan jenis perubahan zat dari tabel observasi", concept: "Periksa data eksperimen: pelepasan panas secara mandiri atau munculnya endapan menunjukkan terjadinya perubahan kimia.", yt: "analisis data eksperimen perubahan materi kelas 7" },
+      { id: "k28", cat: "Zat & Perubahan", topic: "Campuran", title: "Mengidentifikasi campuran homogen dan heterogen", concept: "Homogen: partikel menyatu rata tanpa bidang batas (air sirop). Heterogen: masih ada bidang batas fisik yang jelas (air minyak, air kopi).", yt: "campuran homogen dan heterogen ipa kelas 7" },
+      { id: "k29", cat: "Pengukuran", topic: "Besaran Turunan", title: "Menentukan penurunan rumus volume dari besaran pokok", concept: "Volume diturunkan dari 3 kali perkalian besaran pokok panjang: panjang × lebar × tinggi = meter × meter × meter = m³.", yt: "besaran turunan volume dan luas ipa" },
+      { id: "k30", cat: "Pengukuran", topic: "Besaran Fisika", title: "Menganalisis jenis besaran fisika dari aktivitas pengukuran", concept: "Mengukur detak denyut nadi = Waktu (sekon); Mengukur temperatur air = Suhu (Kelvin); Menimbang tepung = Massa (kg).", yt: "aktivitas pengukuran besaran ipa smp" },
+      { id: "k31", cat: "Pengukuran", topic: "Alat Ukur", title: "Menentukan alat ukur panjang paling tepat sesuai ketelitian", concept: "Ketelitian: Mistar = 1 mm (0,1 cm); Jangka Sorong = 0,1 mm (0,01 cm); Mikrometer Sekrup = 0,01 mm (0,001 cm).", yt: "perbedaan mistar jangka sorong mikrometer sekrup" },
+      { id: "k32", cat: "Pengukuran", topic: "Alat Ukur", title: "Menentukan alat ukur proporsional sesuai bentuk benda", concept: "Ketebalan kertas tipis / diameter kawat -> Mikrometer sekrup; Diameter dalam botol / cincin -> Jangka sorong; Meja -> Mistar.", yt: "penggunaan alat ukur panjang mikrometer dan jangka sorong" },
+      { id: "k33", cat: "Pengukuran", topic: "Ketelitian & Kesalahan", title: "Menentukan hasil ukur presisi dan menghindari galat paralaks", concept: "Kesalahan paralaks dihindari dengan mengarahkan garis pandang mata tegak lurus (90°) terhadap permukaan garis skala pembacaan.", yt: "kesalahan paralaks dalam pengukuran fisika" },
+      { id: "k34", cat: "Pengukuran", topic: "Konversi Satuan", title: "Melakukan perhitungan konversi antarsatuan panjang", concept: "Tangga meter: km - hm - dam - m - dm - cm - mm. Turun 1 tangga = ×10, naik 1 tangga = ÷10. Contoh: 250 cm = 2,5 m.", yt: "konversi satuan panjang ipa smp kelas 7" },
+      { id: "k35", cat: "Zat & Perubahan", topic: "Ciri Fisik Zat", title: "Menganalisis susunan partikel zat padat, cair, dan gas", concept: "Padat: bentuk & volume tetap, susunan partikel sangat teratur dan rapat. Cair: bentuk berubah volume tetap. Gas: bentuk & volume bebas berubah.", yt: "susunan partikel zat padat cair gas ipa" }
+    ];
+
+    // Data Fitur 2: Tantangan Konsep
+    const challenges = [
       {
-        id: "ind_1",
-        category: "Pengukuran",
-        topic: "Besaran & Satuan",
-        title: "Mengidentifikasi besaran dan satuannya sesuai Standar Internasional (SI)",
-        concept: "7 Besaran Pokok SI: Panjang (meter), Massa (kilogram), Waktu (sekon), Suhu (Kelvin), Kuat Arus (Ampere), Jumlah Zat (mol), Intensitas Cahaya (kandela).",
-        ytQuery: "besaran pokok dan satuan internasional smp kelas 7"
+        topic: "Massa Jenis & Fluida",
+        q: "Kenapa paku besi kecil langsung tenggelam di ember, sedangkan kapal kargo baja yang beratnya puluhan ribu ton bisa terapung di laut?",
+        a: "Karena kapal baja dibuat dengan rongga lambung yang sangat luas berisi udara. Volume total kapal menjadi raksasa, sehingga massa jenis rata-rata kapal jauh lebih kecil dibanding massa jenis air laut."
       },
       {
-        id: "ind_2",
-        category: "Pengukuran",
-        topic: "Besaran & Satuan",
-        title: "Mengubah konversi satuan massa ke dalam satuan SI",
-        concept: "Satuan massa standar SI adalah Kilogram (kg). Contoh konversi penting: 1 ton = 1.000 kg, 1 kuintal = 100 kg, 1 gram = 0,001 kg (dibagi 1.000).",
-        ytQuery: "konversi satuan massa smp kelas 7"
-      },
-      {
-        id: "ind_3",
-        category: "Perubahan Zat",
         topic: "Perubahan Zat",
-        title: "Mengidentifikasi jenis perubahan zat berdasarkan pengamatan visual",
-        concept: "Amati apakah terbentuk zat jenis baru. Perubahan wujud dan bentuk adalah fisika; munculnya endapan, gas, api, atau bau khas menandakan kimia.",
-        ytQuery: "perubahan fisika dan kimia kelas 7 kurikulum merdeka"
+        q: "Saat lilin dinyalakan hingga padam, apakah itu murni perubahan fisika atau perubahan kimia?",
+        a: "Keduanya! Lilin padat yang meleleh menjadi cair adalah perubahan fisika (hanya wujud). Sementara sumbu lilin dan gas lilin yang terbakar menjadi asap, karbon dioksida, dan uap air adalah perubahan kimia."
       },
       {
-        id: "ind_4",
-        category: "Pengukuran",
-        topic: "Pengukuran",
-        title: "Membedakan karakteristik alat ukur baku dan tidak baku",
-        concept: "Alat baku (mistar, neraca, stopwatch) menghasilkan nilai seragam dan diakui universal. Alat tidak baku (jengkal, depa, langkah) nilainya variatif antar-individu.",
-        ytQuery: "pengukuran baku dan tidak baku ipa kelas 7"
-      },
-      {
-        id: "ind_5",
-        category: "Pengukuran",
-        topic: "Pengukuran",
-        title: "Membaca dan menafsirkan skala hasil pengukuran massa",
-        concept: "Saat membaca skala neraca, jumlahkan seluruh posisi anting beban di setiap lengan neraca (lengan ratusan, puluhan, dan satuan).",
-        ytQuery: "cara membaca neraca ohaus 3 lengan"
-      },
-      {
-        id: "ind_6",
-        category: "Pengukuran",
-        topic: "Pengukuran",
-        title: "Menentukan massa total benda dari pembacaan anak timbangan neraca",
-        concept: "Keseimbangan neraca tercapai jika: Massa Benda = Jumlah Nilai Seluruh Anak Timbangan pengimbang di lengan seberangnya.",
-        ytQuery: "menghitung massa neraca sama lengan ipa"
-      },
-      {
-        id: "ind_7",
-        category: "Pengukuran",
-        topic: "Besaran",
-        title: "Mengklasifikasikan besaran pokok dalam fisika",
-        concept: "Besaran pokok adalah besaran dasar yang tidak diturunkan dari besaran lain. Ingat jembatan keledai: JIWA SMP (Jumlah zat, Intensitas, Waktu, Arus, Suhu, Massa, Panjang).",
-        ytQuery: "tujuh besaran pokok ipa smp kelas 7"
-      },
-      {
-        id: "ind_8",
-        category: "Perubahan Zat",
-        topic: "Materi",
-        title: "Menjelaskan konsep dasar dan pengertian materi",
-        concept: "Materi adalah segala sesuatu yang mempunyai massa dan menempati ruang (memiliki volume). Semua benda di alam semesta tersusun dari materi.",
-        ytQuery: "pengertian materi dan klasifikasinya ipa smp"
-      },
-      {
-        id: "ind_9",
-        category: "Metode Ilmiah",
-        topic: "Metode Ilmiah",
-        title: "Mengurutkan alur sistematika langkah metode ilmiah",
-        concept: "Tahapan baku investigasi sains: (1) Observasi fenomena -> (2) Merumuskan masalah -> (3) Mengajukan hipotesis -> (4) Eksperimen -> (5) Analisis data -> (6) Menarik kesimpulan.",
-        ytQuery: "langkah langkah metode ilmiah kelas 7"
-      },
-      {
-        id: "ind_10",
-        category: "Pengukuran",
-        topic: "Pengukuran",
-        title: "Membedakan sifat dan reliabilitas satuan baku vs tidak baku",
-        concept: "Satuan baku memiliki nilai pasti dan berlaku di seluruh dunia (meter, gram). Satuan tidak baku (hasta, jengkal) tidak reliabel untuk eksperimen ilmiah.",
-        ytQuery: "satuan baku dan tidak baku smp kelas 7"
-      },
-      {
-        id: "ind_11",
-        category: "Perubahan Zat",
-        topic: "Perubahan Zat",
-        title: "Menganalisis transformasi materi pada peristiwa menggoreng",
-        concept: "Menggoreng (misal telur atau tempe) melibatkan pematangan protein dan perubahan molekul yang tidak dapat kembali ke bentuk semula (Perubahan Kimia).",
-        ytQuery: "contoh perubahan kimia dalam kehidupan sehari-hari"
-      },
-      {
-        id: "ind_12",
-        category: "Perubahan Zat",
-        topic: "Perubahan Zat",
-        title: "Menentukan indikator perubahan kimia dari suatu peristiwa",
-        concept: "4 Tanda terjadinya perubahan kimia: (1) Terjadi perubahan warna, (2) Terbentuk endapan, (3) Terbentuk gas/gelembung, (4) Terjadi perubahan suhu/pelepasan kalor.",
-        ytQuery: "tanda tanda perubahan kimia ipa kelas 7"
-      },
-      {
-        id: "ind_13",
-        category: "Massa Jenis",
-        topic: "Massa Jenis",
-        title: "Menentukan posisi relatif benda dalam fluida berbasis massa jenis",
-        concept: "Jika ρ_benda < ρ_fluida -> Terapung. Jika ρ_benda = ρ_fluida -> Melayang. Jika ρ_benda > ρ_fluida -> Tenggelam.",
-        ytQuery: "posisi benda dalam air terapung melayang tenggelam"
-      },
-      {
-        id: "ind_14",
-        category: "Pengukuran",
-        topic: "Pengukuran",
-        title: "Menentukan luas dan volume berdasarkan hasil pengukuran",
-        concept: "Luas benda tak beraturan dapat diestimasi dengan kertas berpetak. Volume batu/benda tak beraturan diukur menggunakan gelas ukur: V = V_akhir - V_awal.",
-        ytQuery: "mengukur volume benda tak beraturan dengan gelas ukur"
-      },
-      {
-        id: "ind_15",
-        category: "Metode Ilmiah",
-        topic: "Metode Ilmiah",
-        title: "Membedakan validitas investigasi ilmiah dan non-ilmiah",
-        concept: "Penyelidikan ilmiah bersandar pada data terukur, bukti empiris, dan dapat diuji ulang (replikasi). Non-ilmiah bersandar pada opini subjektif, prasangka, atau mitos.",
-        ytQuery: "hakikat sains dan metode ilmiah smp"
-      },
-      {
-        id: "ind_16",
-        category: "Metode Ilmiah",
-        topic: "Metode Ilmiah",
-        title: "Menjodohkan tahapan metode ilmiah dengan aktivitas riset riil",
-        concept: "Mencatat perubahan tinggi tanaman harian = Pengumpulan data; Mengira-ngira hubungan cahaya dan klorofil sebelum uji = Membuat hipotesis.",
-        ytQuery: "contoh penerapan tahapan metode ilmiah ipa"
-      },
-      {
-        id: "ind_17",
-        category: "Metode Ilmiah",
-        topic: "Keselamatan Kerja",
-        title: "Menjelaskan prosedur keselamatan kerja di laboratorium IPA",
-        concept: "Gunakan jas lab & kacamata pelindung, jangan menghirup uap bahan kimia langsung (kibaskan dengan tangan), dan kenali letak APAR serta simbol bahaya bahan kimia.",
-        ytQuery: "keselamatan kerja di laboratorium ipa smp kelas 7"
-      },
-      {
-        id: "ind_18",
-        category: "Metode Ilmiah",
-        topic: "Cabang IPA",
-        title: "Menjodohkan cabang sains dengan fokus objek kajiannya",
-        concept: "Biologi (makhluk hidup), Fisika (energi, materi, dan gerak), Kimia (struktur dan reaksi zat), Astronomi (benda langit), Geologi (struktur bumi & batuan).",
-        ytQuery: "cabang cabang ilmu ipa kelas 7 kurikulum merdeka"
-      },
-      {
-        id: "ind_19",
-        category: "Metode Ilmiah",
-        topic: "Variabel Penelitian",
-        title: "Mengidentifikasi variabel bebas, terikat, dan kontrol",
-        concept: "Variabel Bebas: yang sengaja diubah oleh peneliti. Variabel Terikat: hasil yang diukur/diamati. Variabel Kontrol: faktor lain yang dibuat konstan/sama.",
-        ytQuery: "variabel bebas terikat kontrol ipa kelas 7"
-      },
-      {
-        id: "ind_20",
-        category: "Metode Ilmiah",
-        topic: "Metode Ilmiah",
-        title: "Menjelaskan implementasi tahapan investigasi ilmiah untuk problem riil",
-        concept: "Penerapan metode ilmiah untuk memecahkan masalah keseharian secara logis dan runtut berdasarkan fakta lapangan.",
-        ytQuery: "metode ilmiah kurikulum merdeka kelas 7"
-      },
-      {
-        id: "ind_21",
-        category: "Perubahan Zat",
-        topic: "Perubahan Wujud",
-        title: "Menjodohkan jenis proses perubahan wujud zat dengan contoh fenomena",
-        concept: "Membeku (cair -> padat), Mencair (padat -> cair), Menguap (cair -> gas), Mengembun (gas -> cair), Menyublim (padat -> gas), Mengkristal/Mendeposisi (gas -> padat).",
-        ytQuery: "perubahan wujud zat ipa smp kelas 7"
-      },
-      {
-        id: "ind_22",
-        category: "Perubahan Zat",
-        topic: "Perubahan Zat",
-        title: "Membedakan sifat reaksi fisika vs kimia",
-        concept: "Perubahan fisika: susunan molekul tetap, hanya bentuk/wujud yang berubah (bisa balik). Perubahan kimia: susunan molekul berubah menghasilkan zat baru (ireversibel).",
-        ytQuery: "perbedaan perubahan fisika dan kimia kelas 7"
-      },
-      {
-        id: "ind_23",
-        category: "Massa Jenis",
-        topic: "Massa Jenis",
-        title: "Menerapkan prinsip kerapatan zat pada mekanisme benda mengapung",
-        concept: "Rumus Massa Jenis: ρ = m / V. Benda berongga dapat mengapung karena volume totalnya besar, sehingga massa jenis rata-ratanya menjadi lebih kecil dari cairan.",
-        ytQuery: "rumus massa jenis ipa smp kelas 7"
-      },
-      {
-        id: "ind_24",
-        category: "Massa Jenis",
-        topic: "Massa Jenis",
-        title: "Menganalisis fenomena manusia mudah terapung di Laut Mati",
-        concept: "Kadar garam terlarut di Laut Mati sangat tinggi (~30%), membuat massa jenis air laut mati jauh lebih besar (ρ ≈ 1,24 g/cm³) daripada massa jenis rata-rata tubuh manusia (ρ ≈ 0,98 g/cm³).",
-        ytQuery: "mengapa kita bisa mengapung di laut mati sains"
-      },
-      {
-        id: "ind_25",
-        category: "Massa Jenis",
-        topic: "Massa Jenis",
-        title: "Menganalisis korelasi matematis massa jenis dan perilaku benda",
-        concept: "Massa jenis merupakan kerapatan partikel zat per satuan volume. Nilai massa jenis suatu zat murni bersifat tetap dan menjadi identitas khas zat tersebut.",
-        ytQuery: "konsep massa jenis terapung melayang tenggelam"
-      },
-      {
-        id: "ind_26",
-        category: "Perubahan Zat",
-        topic: "Perubahan Wujud",
-        title: "Menjelaskan mekanisme perubahan wujud menyublim",
-        concept: "Menyublim adalah perubahan langsung dari fase padat ke fase gas tanpa melalui fase cair terlebih dahulu saat menyerap kalor (contoh: kapur barus / dry ice).",
-        ytQuery: "proses menyublim kapur barus ipa"
-      },
-      {
-        id: "ind_27",
-        category: "Perubahan Zat",
-        topic: "Perubahan Zat",
-        title: "Menyimpulkan jenis perubahan materi dari data tabel eksperimen",
-        concept: "Periksa kolom hasil observasi: jika terjadi kenaikan temperatur secara mandiri atau muncul endapan padat baru, simpulkan sebagai reaksi kimia.",
-        ytQuery: "analisis data eksperimen perubahan materi kelas 7"
-      },
-      {
-        id: "ind_28",
-        category: "Perubahan Zat",
-        topic: "Campuran",
-        title: "Mengidentifikasi campuran homogen dan heterogen",
-        concept: "Campuran Homogen (larutan): partikel tercampur rata, tidak ada batas bidang (air sirup). Campuran Heterogen: masih ada bidang batas nyata antar zat (air kopi tubruk, air pasir).",
-        ytQuery: "campuran homogen dan heterogen ipa kelas 7"
-      },
-      {
-        id: "ind_29",
-        category: "Pengukuran",
-        topic: "Besaran Turunan",
-        title: "Menentukan besaran turunan volume dari besaran pokok pembentuknya",
-        concept: "Volume adalah turunan dari besaran pokok panjang. Volume balok = panjang × lebar × tinggi -> m × m × m = m³.",
-        ytQuery: "besaran turunan volume dan luas ipa"
-      },
-      {
-        id: "ind_30",
-        category: "Pengukuran",
-        topic: "Besaran",
-        title: "Menganalisis jenis besaran fisika dari aktivitas pengukuran konkret",
-        concept: "Mengukur durasi lari = Besaran Waktu (sekon); Menimbang berat belanjaan = Besaran Massa (kg); Mengukur panjang meja = Besaran Panjang (meter).",
-        ytQuery: "aktivitas pengukuran besaran ipa smp"
-      },
-      {
-        id: "ind_31",
-        category: "Pengukuran",
-        topic: "Alat Ukur",
-        title: "Menentukan alat ukur panjang paling tepat berdasarkan ketelitiannya",
-        concept: "Ketelitian instrumen: Penggaris (1 mm / 0,1 cm), Jangka Sorong (0,1 mm / 0,01 cm), Mikrometer Sekrup (0,01 mm / 0,001 cm).",
-        ytQuery: "perbedaan mistar jangka sorong mikrometer sekrup"
-      },
-      {
-        id: "ind_32",
-        category: "Pengukuran",
-        topic: "Alat Ukur",
-        title: "Menentukan alat ukur yang proporsional sesuai dimensi objek",
-        concept: "Mengukur tebal selembar kertas/rambut -> Mikrometer Sekrup. Mengukur diameter dalam pipa/koin -> Jangka Sorong. Mengukur meja belajar -> Meteran rol/mistar.",
-        ytQuery: "penggunaan alat ukur panjang mikrometer dan jangka sorong"
-      },
-      {
-        id: "ind_33",
-        category: "Pengukuran",
-        topic: "Ketelitian & Kesalahan",
-        title: "Menentukan hasil ukur paling presisi dan mengidentifikasi kesalahan paralaks",
-        concept: "Kesalahan Paralaks terjadi jika arah pandangan mata tidak tegak lurus terhadap garis skala saat pembacaan hasil ukur.",
-        ytQuery: "kesalahan paralaks dalam pengukuran fisika"
-      },
-      {
-        id: "ind_34",
-        category: "Pengukuran",
-        topic: "Konversi Satuan",
-        title: "Melakukan perhitungan konversi antarsatuan panjang",
-        concept: "Tangga satuan panjang: km - hm - dam - m - dm - cm - mm. Tiap turun satu tingkat kalikan 10, tiap naik satu tingkat bagi dengan 10.",
-        ytQuery: "konversi satuan panjang ipa smp kelas 7"
-      },
-      {
-        id: "ind_35",
-        category: "Perubahan Zat",
-        topic: "Ciri Fisik Zat",
-        title: "Menganalisis ciri dan susunan partikel zat padat, cair, dan gas",
-        concept: "Padat: bentuk & volume tetap, susunan partikel sangat rapat & teratur. Cair: volume tetap bentuk berubah mengikuti wadah. Gas: bentuk & volume berubah menempati seluruh ruang.",
-        ytQuery: "susunan partikel zat padat cair gas ipa"
+        topic: "Ketelitian Pengukuran",
+        q: "Mengapa seorang teknisi mesin menggunakan mikrometer sekrup untuk mengukur tebal lempeng baja, bukan penggaris biasa?",
+        a: "Mikrometer sekrup memiliki ketelitian 0,01 mm (100 kali lebih teliti dari penggaris yang hanya 1 mm), sehingga celah toleransi mesin tetap presisi dan tidak rusak."
       }
     ];
 
-    // State Management via LocalStorage
-    const STORAGE_KEY = 'asts_ipa_mastery_data_v1';
-    let completedSet = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'));
-    let activeFilter = 'all';
-    let searchQuery = '';
+    // Data Fitur 5: Radar Jebakan Konsep
+    const traps = [
+      {
+        name: "Jebakan: Massa Disamakan dengan Berat",
+        wrong: "Miskonsepsi: Menganggap massa dan berat adalah dua hal yang sama persis.",
+        right: "Fakta Ilmiah: Massa (kg) adalah jumlah materi yang selalu tetap di manapun. Berat (Newton) adalah gaya tarik gravitasi yang nilainya berubah bila gravitasi planet berubah."
+      },
+      {
+        name: "Jebakan: Air Mendidih Dianggap Reaksi Kimia",
+        wrong: "Miskonsepsi: Mengira timbulnya uap dan gelembung saat air mendidih sebagai tanda pembentukan zat kimia baru.",
+        right: "Fakta Ilmiah: Murni perubahan fisika! Uap yang keluar tetaplah molekul air (H₂O) dalam fasa gas, tidak ada zat molekul baru yang tercipta."
+      },
+      {
+        name: "Jebakan: Benda Berat Pasti Tenggelam",
+        wrong: "Miskonsepsi: Mengira semua benda berbobot besar pasti tenggelam di air.",
+        right: "Fakta Ilmiah: Peristiwa tenggelam atau terapung ditentukan oleh Kerapatan (Massa Jenis), bukan berat semata. Gelondongan kayu 100 kg tetap terapung karena massa jenisnya lebih kecil dari air."
+      }
+    ];
+
+    // State LocalStorage
+    const DB_KEY = "asts_ipa7_mastery_v3";
+    let completedSet = new Set(JSON.parse(localStorage.getItem(DB_KEY) || "[]"));
 
     function saveState() {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify([...completedSet]));
+      localStorage.setItem(DB_KEY, JSON.stringify([...completedSet]));
       updateProgress();
     }
 
     function updateProgress() {
-      const total = indicatorsData.length;
+      const total = indicators.length;
       const count = completedSet.size;
-      const percent = Math.round((count / total) * 100);
+      const pct = Math.round((count / total) * 100);
 
-      document.getElementById('statCompleted').textContent = `${count}/${total}`;
-      document.getElementById('progressPercentage').textContent = `${percent}%`;
-      document.getElementById('progressBar').style.width = `${percent}%`;
+      document.getElementById('topCounter').textContent = `${count}/${total}`;
+      document.getElementById('progressPct').textContent = `${pct}%`;
+      document.getElementById('progressBar').style.width = `${pct}%`;
     }
 
-    // Render Cards List
-    function renderList() {
-      const container = document.getElementById('indicatorContainer');
-      const emptyNotice = document.getElementById('emptyNotice');
+    // Render Checklist Indikator
+    let currentCat = "all";
+    let currentSearch = "";
 
-      const filtered = indicatorsData.filter(item => {
-        const matchesCat = (activeFilter === 'all') || (item.category === activeFilter);
-        const searchStr = (item.title + ' ' + item.topic + ' ' + item.concept + ' ' + item.category).toLowerCase();
-        const matchesSearch = searchStr.includes(searchQuery.toLowerCase());
-        return matchesCat && matchesSearch;
+    function renderIndicators() {
+      const cont = document.getElementById('indicatorsList');
+      const filtered = indicators.filter(item => {
+        const matchCat = (currentCat === "all") || (item.cat === currentCat);
+        const matchText = (item.title + " " + item.cat + " " + item.topic + " " + item.concept).toLowerCase().includes(currentSearch.toLowerCase());
+        return matchCat && matchText;
       });
 
-      container.innerHTML = '';
-
-      if (filtered.length === 0) {
-        emptyNotice.style.display = 'block';
-        return;
-      }
-
-      emptyNotice.style.display = 'none';
-
+      cont.innerHTML = "";
       filtered.forEach(item => {
         const isDone = completedSet.has(item.id);
         const card = document.createElement('div');
-        card.className = `target-card ${isDone ? 'completed' : ''}`;
-        card.id = `card_${item.id}`;
+        card.className = `indicator-card ${isDone ? 'completed' : ''}`;
+        card.id = `ind_${item.id}`;
 
-        const ytUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(item.ytQuery)}`;
+        const ytLink = `https://www.youtube.com/results?search_query=${encodeURIComponent(item.yt)}`;
 
         card.innerHTML = `
-          <div class="card-top">
-            <button class="check-btn" onclick="toggleComplete('${item.id}')" aria-label="Tandai paham">
+          <div class="ind-row">
+            <button class="btn-check" onclick="toggleInd('${item.id}')" aria-label="Centang">
               <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </button>
-            <div class="card-body">
-              <div class="card-tags">
-                <span class="card-pill">${item.category}</span>
-                <span class="card-pill">${item.topic}</span>
+            <div class="ind-content">
+              <div class="ind-pills">
+                <span class="ind-pill">${item.cat}</span>
+                <span class="ind-pill">${item.topic}</span>
               </div>
-              <div class="card-title">${item.title}</div>
-              
-              <div class="card-actions">
-                <button class="toggle-hint-btn" onclick="toggleDetails('${item.id}')">Poin Esensial</button>
-                <a href="${ytUrl}" target="_blank" rel="noopener noreferrer" class="duo-link-btn">
-                  <span>Video Topik</span>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                </a>
+              <div class="ind-title">${item.title}</div>
+              <div class="ind-actions">
+                <button class="ind-btn-text" onclick="toggleDrawer('${item.id}')">Inti Konsep</button>
+                <a href="${ytLink}" target="_blank" rel="noopener noreferrer" class="ind-btn-link">Video Topik</a>
               </div>
-
-              <div class="card-details" id="detail_${item.id}">
-                <div class="concept-box">
-                  <strong>Ringkasan Konsep Kunci</strong>
-                  ${item.concept}
-                </div>
+              <div class="ind-drawer" id="drawer_${item.id}">
+                ${item.concept}
               </div>
             </div>
           </div>
         `;
-        container.appendChild(card);
+        cont.appendChild(card);
       });
     }
 
-    window.toggleComplete = function(id) {
+    window.toggleInd = function(id) {
       if (completedSet.has(id)) {
         completedSet.delete(id);
       } else {
         completedSet.add(id);
       }
       saveState();
-      
-      const card = document.getElementById(`card_${id}`);
-      if (card) {
-        card.classList.toggle('completed', completedSet.has(id));
-      }
+      const el = document.getElementById(`ind_${id}`);
+      if (el) el.classList.toggle('completed', completedSet.has(id));
     };
 
-    window.toggleDetails = function(id) {
-      const el = document.getElementById(`detail_${id}`);
-      if (el) {
-        el.classList.toggle('open');
-      }
+    window.toggleDrawer = function(id) {
+      const drawer = document.getElementById(`drawer_${id}`);
+      if (drawer) drawer.classList.toggle('open');
     };
 
-    // Filter and Search Listeners
     document.getElementById('searchInput').addEventListener('input', (e) => {
-      searchQuery = e.target.value.trim();
-      renderList();
+      currentSearch = e.target.value.trim();
+      renderIndicators();
     });
 
-    const filterBtns = document.querySelectorAll('.duo-tab-btn');
-    filterBtns.forEach(btn => {
+    const chipBtns = document.querySelectorAll('.chip-btn');
+    chipBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
+        chipBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        activeFilter = btn.getAttribute('data-filter');
-        renderList();
+        currentCat = btn.getAttribute('data-cat');
+        renderIndicators();
       });
     });
 
-    // Simulation logic
-    const liquidSelect = document.getElementById('liquidSelect');
-    const massRange = document.getElementById('massRange');
-    const volumeRange = document.getElementById('volumeRange');
-    const massVal = document.getElementById('massVal');
-    const volVal = document.getElementById('volVal');
-    const simObject = document.getElementById('simObject');
-    const objDensitySpan = document.getElementById('objDensity');
-    const simResult = document.getElementById('simResult');
+    // Render Fitur 2: Tantangan
+    function renderChallenges() {
+      const cont = document.getElementById('challengeList');
+      cont.innerHTML = "";
+      challenges.forEach((ch, idx) => {
+        const item = document.createElement('div');
+        item.className = 'challenge-card';
+        item.innerHTML = `
+          <div class="challenge-tag">Kasus #${idx + 1} · ${ch.topic}</div>
+          <div class="challenge-q">${ch.q}</div>
+          <div class="challenge-ans" id="ans_${idx}">${ch.a}</div>
+          <button class="duo-btn-small" onclick="toggleAnswer(${idx})">Buka Analisis Ilmiah</button>
+        `;
+        cont.appendChild(item);
+      });
+    }
 
-    function updateSimulation() {
-      const liquidRho = parseFloat(liquidSelect.value);
-      const m = parseFloat(massRange.value);
-      const v = parseFloat(volumeRange.value);
-      const rho = parseFloat((m / v).toFixed(2));
+    window.toggleAnswer = function(idx) {
+      const box = document.getElementById(`ans_${idx}`);
+      if (box) box.classList.toggle('show');
+    };
 
-      massVal.textContent = m;
-      volVal.textContent = v;
-      objDensitySpan.textContent = rho;
+    // Render Fitur 5: Radar Jebakan
+    function renderTraps() {
+      const cont = document.getElementById('trapsList');
+      cont.innerHTML = "";
+      traps.forEach(t => {
+        const item = document.createElement('div');
+        item.className = 'trap-box';
+        item.innerHTML = `
+          <div class="trap-name">${t.name}</div>
+          <div class="trap-wrong">${t.wrong}</div>
+          <div class="trap-right">${t.right}</div>
+        `;
+        cont.appendChild(item);
+      });
+    }
 
-      // Calculate position relative to container
-      if (rho < liquidRho - 0.05) {
-        // Terapung
-        simObject.style.transform = 'translateY(-45px)';
-        simResult.innerHTML = 'Posisi: <span>Terapung</span> (ρ benda < ρ fluida)';
-      } else if (Math.abs(rho - liquidRho) <= 0.05) {
-        // Melayang
-        simObject.style.transform = 'translateY(0px)';
-        simResult.innerHTML = 'Posisi: <span>Melayang</span> (ρ benda ≈ ρ fluida)';
-      } else {
-        // Tenggelam
-        simObject.style.transform = 'translateY(48px)';
-        simResult.innerHTML = 'Posisi: <span>Tenggelam</span> (ρ benda > ρ fluida)';
+    // Logika Fitur 3: Simulator Jangka Sorong
+    const mainTicksGroup = document.getElementById('mainTicks');
+    const vernierTicksGroup = document.getElementById('vernierTicks');
+    const sliderGroup = document.getElementById('sliderGroup');
+    const caliperRange = document.getElementById('caliperRange');
+    const caliperResult = document.getElementById('caliperResult');
+    const caliperCalc = document.getElementById('caliperCalc');
+    const sliderValueText = document.getElementById('sliderValueText');
+
+    // Build Main Scale ticks: 0 - 3.5 cm (35 mm)
+    for (let mm = 0; mm <= 35; mm++) {
+      const x = 15 + (mm * 11);
+      const isCm = mm % 10 === 0;
+      const isHalf = mm % 5 === 0 && !isCm;
+      const h = isCm ? 18 : (isHalf ? 13 : 8);
+
+      const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      line.setAttribute("x1", x);
+      line.setAttribute("y1", 15);
+      line.setAttribute("x2", x);
+      line.setAttribute("y2", 15 + h);
+      line.setAttribute("stroke", "#475569");
+      line.setAttribute("stroke-width", isCm ? "1.5" : "1");
+      mainTicksGroup.appendChild(line);
+
+      if (isCm) {
+        const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        text.setAttribute("x", x);
+        text.setAttribute("y", 46);
+        text.textContent = (mm / 10);
+        mainTicksGroup.appendChild(text);
       }
     }
 
-    liquidSelect.addEventListener('change', updateSimulation);
-    massRange.addEventListener('input', updateSimulation);
-    volumeRange.addEventListener('input', updateSimulation);
+    // Build Vernier Ticks (10 divisions across 9 mm space)
+    for (let v = 0; v <= 10; v++) {
+      const x = v * 9.9;
+      const isFive = v % 5 === 0;
+      const h = isFive ? 14 : 9;
+
+      const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      line.setAttribute("x1", x);
+      line.setAttribute("y1", 0);
+      line.setAttribute("x2", x);
+      line.setAttribute("y2", h);
+      line.setAttribute("stroke", "#0284c7");
+      line.setAttribute("stroke-width", isFive ? "1.5" : "1");
+      vernierTicksGroup.appendChild(line);
+
+      if (isFive) {
+        const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        text.setAttribute("x", x);
+        text.setAttribute("y", 25);
+        text.textContent = v;
+        vernierTicksGroup.appendChild(text);
+      }
+    }
+
+    function updateCaliper() {
+      const rawVal = parseInt(caliperRange.value, 10); // 0 to 350 -> 0.00 to 3.50 cm
+      const totalCm = (rawVal / 100).toFixed(2);
+      const mainCm = (Math.floor(rawVal / 10) / 10).toFixed(1);
+      const nonius = rawVal % 10;
+
+      caliperResult.textContent = `${totalCm} cm`;
+      caliperCalc.textContent = `Skala Utama: ${mainCm} cm + Nonius: ${nonius} × 0.01 = ${totalCm} cm`;
+      sliderValueText.textContent = `${totalCm} cm`;
+
+      const posX = 15 + (rawVal * 1.1);
+      sliderGroup.setAttribute("transform", `translate(${posX}, 55)`);
+    }
+
+    caliperRange.addEventListener('input', updateCaliper);
+
+    // Logika Fitur 4: Tangga Satuan SI
+    const ladderSteps = [
+      { name: "Kilometer (km)", symbol: "km" },
+      { name: "Hektometer (hm)", symbol: "hm" },
+      { name: "Dekameter (dam)", symbol: "dam" },
+      { name: "Meter (m) [Satuan SI]", symbol: "m" },
+      { name: "Desimeter (dm)", symbol: "dm" },
+      { name: "Sentimeter (cm)", symbol: "cm" },
+      { name: "Milimeter (mm)", symbol: "mm" }
+    ];
+
+    let fromIdx = 5; // Default: cm
+    let toIdx = 3;   // Default: m
+
+    function renderLadder() {
+      const cont = document.getElementById('ladderGrid');
+      cont.innerHTML = "";
+      ladderSteps.forEach((st, idx) => {
+        const item = document.createElement('div');
+        const isFrom = idx === fromIdx;
+        const isTo = idx === toIdx;
+        item.className = `ladder-item ${isFrom ? 'selected-from' : ''} ${isTo ? 'selected-to' : ''}`;
+
+        let statusText = "";
+        if (isFrom) statusText = `<span class="ladder-tag-pill" style="background:#0284c7; color:#fff;">Asal</span>`;
+        if (isTo) statusText = `<span class="ladder-tag-pill" style="background:#58cc02; color:#fff;">Tujuan</span>`;
+
+        item.innerHTML = `
+          <div><span>${idx + 1}.</span> <strong>${st.name}</strong></div>
+          <div>${statusText}</div>
+        `;
+        item.addEventListener('click', () => {
+          if (fromIdx !== null && toIdx !== null) {
+            fromIdx = idx;
+            toIdx = null;
+          } else if (fromIdx !== null && toIdx === null) {
+            toIdx = idx;
+          }
+          renderLadder();
+          calcLadder();
+        });
+        cont.appendChild(item);
+      });
+      calcLadder();
+    }
+
+    function calcLadder() {
+      const inputVal = parseFloat(document.getElementById('ladderInput').value) || 0;
+      const stepsLabel = document.getElementById('ladderSteps');
+      const outputLabel = document.getElementById('ladderOutput');
+
+      if (fromIdx === null || toIdx === null) {
+        stepsLabel.textContent = "Silakan klik satu anak tangga lagi sebagai satuan tujuan.";
+        outputLabel.textContent = "...";
+        return;
+      }
+
+      const diff = toIdx - fromIdx;
+      const fromSym = ladderSteps[fromIdx].symbol;
+      const toSym = ladderSteps[toIdx].symbol;
+
+      if (diff === 0) {
+        stepsLabel.textContent = "Satuan sama (tanpa perubahan tangga)";
+        outputLabel.textContent = `${inputVal} ${fromSym} = ${inputVal} ${toSym}`;
+      } else if (diff > 0) {
+        // Turun tangga
+        const mult = Math.pow(10, diff);
+        const res = inputVal * mult;
+        stepsLabel.textContent = `Turun ${diff} tingkat: kalikan dengan 10^${diff} (${mult.toLocaleString()})`;
+        outputLabel.textContent = `${inputVal} ${fromSym} = ${res.toLocaleString()} ${toSym}`;
+      } else {
+        // Naik tangga
+        const stepsUp = Math.abs(diff);
+        const div = Math.pow(10, stepsUp);
+        const res = inputVal / div;
+        stepsLabel.textContent = `Naik ${stepsUp} tingkat: bagi dengan 10^${stepsUp} (${div.toLocaleString()})`;
+        outputLabel.textContent = `${inputVal} ${fromSym} = ${res} ${toSym}`;
+      }
+    }
+
+    document.getElementById('ladderInput').addEventListener('input', calcLadder);
 
     // Initial Execution
     updateProgress();
-    renderList();
-    updateSimulation();
+    renderIndicators();
+    renderChallenges();
+    renderTraps();
+    updateCaliper();
+    renderLadder();
   </script>
 </body>
 </html>
